@@ -1,22 +1,28 @@
-body{
-   background:transparent !important;
+//Panels
+main, #footer{
+   @media screen and ($bp-larger-than-desktophd){
+      padding-left: 100px;
+   }
 }
 
-//Panels
 .welcome-gate{
    height: 100vh;
    position: relative;
    overflow: hidden;
-   color: $white;
-   padding: 50vh 0 0 0;
+   color: $alt-gray;
+   padding: 45vh 0 0 0;
    text-align: center;
    .container{
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+      -webkit-transform: translateY(-55%);
+      -ms-transform: translateY(-55%);
+      transform: translateY(-55%);
    }
    .hero{
       position: fixed;
+   }
+   img.feature-image{
+      height: 390px;
+      width: auto;
    }
    #scrollLink{
       position: absolute;
@@ -36,12 +42,13 @@ body{
       margin: 0 auto;
       h1{
          // font-family: $av-italic;
-         letter-spacing: 2.5px;
          line-height: 65px;
          margin-bottom: 20px;
+         font-size: 36px;
+         letter-spacing: 2.25px;
          //font-family: $primary_font;
-         font-weight: 300;
-         font-style: italic;
+         // font-weight: 300;
+         // font-style: italic;
          @media screen and ($bp-smaller-than-mobile){
             line-height: normal;
             font-size: 3.6rem;
@@ -79,6 +86,9 @@ body{
    background-color: $white;
    &.cards{
       background-color: transparent;
+      &.bc-grid{
+         background-color: $offwhite;
+      }
       .hero{
          z-index: 0;
       }
@@ -335,6 +345,18 @@ body{
       max-height: 140px;
       max-width: 100%;
       margin-bottom: 2rem;
+   }
+}
+
+.title-bar{
+   background-color: $orange;
+   text-align: center;
+   padding: 20px 0;
+   p{
+      color: $white;
+      font-family: $isidora-black;
+      font-size: 36px;
+      letter-spacing: 1.12px;
    }
 }
 

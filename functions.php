@@ -3,6 +3,11 @@ function my_theme_enqueue_styles() {
 
     //$parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
     $parent_style = 'acs-style-css';
+    wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js', '1.20.4', true );
+	wp_enqueue_script( 'scrollmagic', 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js', '2.0.5', true );
+	wp_enqueue_script( 'scrollmagic-gsap', 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', '2.0.5', true );
+	// wp_enqueue_script( 'scroll-js', get_template_directory_uri().'/js/smoothscroll.min.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri().'/js/mesh.js', array('jquery'), '1.0.0', true );
     wp_dequeue_style( 'acs-style-css', get_template_directory_uri() . 'css/style.css',100 );
     wp_enqueue_style( 'child-style',
         get_stylesheet_directory_uri() . '/style.css'

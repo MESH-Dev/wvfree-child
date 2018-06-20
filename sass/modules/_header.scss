@@ -1,10 +1,15 @@
 header{
    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
    position: fixed;
-   width: 100%;
+   // width: 100%;
    z-index: 100;
-   height: 64px;
+   // height: 64px;
    overflow: hidden;
+   top: 0;
+   bottom: 0;
+   width: 100px;
+   text-align: center;
+   background-color: $navy;
    @media screen and ($bp-smaller-than-desktophd){
       overflow: visible;
    }
@@ -22,8 +27,8 @@ header{
 }
 
 .main-navigation{
-   display: inline-block;
-   float: right;
+   // display: inline-block;
+   // float: right;
    ul{
       margin: 0px;
       @media screen and ($bp-smaller-than-desktophd){
@@ -39,33 +44,46 @@ header{
       }
       li{
          list-style-type:  none;
-         display: inline-block;
-         margin: 0 0 0 10px;
+         // display: inline-block;
+         // margin: 0 0 0 10px;
+         margin: 0 0 10px 0;
          transition: background-color 0.2s ease-in-out;
          @media screen and ($bp-smaller-than-desktophd){
             display: block;
             text-align: center;
             margin-left: 0px;
          }
-         &:hover{
-            background-color: rgba(0,0,0,0.15);
-         }
+         // &:hover{
+         //    background-color: rgba(0,0,0,0.15);
+         // }
          a{
-            display: inline-block;
-            line-height: 64px;
-            font-size: 1.5rem;
+            // display: inline-block;
+            // line-height: 64px;
+            font-family: $isidora-bold;
+            font-size: 15px;
             color: $white;
-            padding: 0 20px;
+            // padding: 0 20px;
+            padding: 15px;
             letter-spacing: 1.5px;
-            transition: box-shadow 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
             // font-family: $av-demibold;
             //font-family: $primary_font;
-            font-weight: 600;
+            // font-weight: 600;
+            display: block;
             &:hover{
+               text-decoration: none;
+               // background-color: rgba(0,0,0,0.15);
+               opacity: 0.5;
+            }
+            &:focus{
+               text-decoration: none;
+            }
+            &:active{
                text-decoration: none;
             }
             &.active{
-               box-shadow: inset 0px -2px 0px $white;
+               // box-shadow: inset 0px -2px 0px $white;
+               opacity: 0.5;
             }
          }
       }
@@ -75,7 +93,7 @@ header{
 #mobileMenuTrigger{
    display: inline-block;
    line-height: 64px;
-   font-size: 1.5rem;
+   font-size: 15px;
    color: $white;
    padding: 0 20px;
    letter-spacing: 1.5px;

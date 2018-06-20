@@ -97,6 +97,10 @@ main, #footer{
       }
       .row{
          z-index: 2;
+         margin-bottom: 20px;
+         &:last-of-type{
+            margin-bottom: 0px;
+         }
       }
       .card{
          z-index: 2;
@@ -328,17 +332,15 @@ main, #footer{
    h3{
       // font-family: $av-demibold;
       font-size: 3.2rem;
-      letter-spacing: 1px;
-      //font-family: $primary_font;
+      letter-spacing: 2px;
+      font-family: $isidora-black;
       font-weight: 600;
    }
    p{
-      //font-family: $secondary_font;
+      font-family: $isidora-regular;
       color: $white;
-      font-weight: 200;
-      font-size: 1.4rem;
-      letter-spacing: 0.47px;
-      line-height: 25px;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
    }
    img{
       transition: transform 0.2s ease-in-out;

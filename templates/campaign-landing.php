@@ -102,6 +102,9 @@ get_header('cpl'); ?>
 				</div>
 			</div>
 		</div>
+		<div class="map-panel">
+
+		</div>
 	<?php
 	if(have_rows('panels')):
 		while(have_rows('panels')) : the_row();

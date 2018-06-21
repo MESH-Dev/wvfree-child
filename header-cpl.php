@@ -22,60 +22,61 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
 	<!-- Typography & Icon Fonts -->
+	<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/f93022a6-9283-45d4-9674-35fc620d6324.css"/>
 	<?php
 
-		$primary_font_css = get_field('primary_font_css', 'option');
-		$secondary_font_css = get_field('secondary_font_css', 'option');
-		$pf_css = '';
-		$sf_css = '';
-
-		$font_select = get_field('font_pairing', 'option');
-		if ($font_select == 1) {
-			echo '<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">';
-			echo '<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">';
-			$pf_css = "font-family: 'Nunito Sans', sans-serif;";
-			$sf_css = "font-family: 'Merriweather', serif;";
-		} elseif($font_select == 2){
-			echo '<link href="https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">';
-			$pf_css = "font-family: 'Montserrat', sans-serif;";
-			$sf_css = "font-family: 'Playfair Display', serif;";
-		} elseif($font_select == 3){
-			echo ' <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Zilla+Slab:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">';
-			$pf_css = "font-family: 'Ubuntu', sans-serif;";
-			$sf_css = "font-family: 'Zilla Slab', serif;";
-		} elseif($font_select == 4){
-			echo '<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Merriweather:300,300i,400,400i,700,700i" rel="stylesheet">';
-			$pf_css = "font-family: 'IBM Plex Serif', serif;";
-			$sf_css = "font-family: 'Merriweather', serif;";
-		} elseif ($font_select == 5) {
-			echo '<link href="https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i|Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">';
-			$pf_css = "font-family: 'Muli', sans-serif;";
-			$sf_css = "font-family: 'Raleway', sans-serif;";
-		} elseif ($font_select == 6) {
-			echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Zilla+Slab:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">';
-			$pf_css = "font-family: 'Zilla Slab', serif;";
-			$sf_css = "font-family: 'Open Sans', sans-serif;";
-		} else {
-			echo '<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">';
-			echo '<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">';
-			$pf_css = "font-family: 'Nunito Sans', sans-serif;";
-			$sf_css = "font-family: 'Merriweather', serif;";
-		};
-
-		// $primary_font = get_field('primary_font_code', 'option');
-		// //the_field('primary_font_code', 'option');
-		// if($primary_font != '' && $primary_font_css != ''){
-		// 	echo $primary_font;
-		// }else{
+		// $primary_font_css = get_field('primary_font_css', 'option');
+		// $secondary_font_css = get_field('secondary_font_css', 'option');
+		// $pf_css = '';
+		// $sf_css = '';
+		//
+		// $font_select = get_field('font_pairing', 'option');
+		// if ($font_select == 1) {
 		// 	echo '<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">';
-		// }
-		// $secondary_font = get_field('secondary_font_code', 'option');
-		// //the_field('secondary_font_code', 'option');
-		// if($secondary_font != '' && $primary_font_css != ''){
-		// 	echo $secondary_font;
-		// }else{
 		// 	echo '<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">';
-		// }
+		// 	$pf_css = "font-family: 'Nunito Sans', sans-serif;";
+		// 	$sf_css = "font-family: 'Merriweather', serif;";
+		// } elseif($font_select == 2){
+		// 	echo '<link href="https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">';
+		// 	$pf_css = "font-family: 'Montserrat', sans-serif;";
+		// 	$sf_css = "font-family: 'Playfair Display', serif;";
+		// } elseif($font_select == 3){
+		// 	echo ' <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Zilla+Slab:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">';
+		// 	$pf_css = "font-family: 'Ubuntu', sans-serif;";
+		// 	$sf_css = "font-family: 'Zilla Slab', serif;";
+		// } elseif($font_select == 4){
+		// 	echo '<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Merriweather:300,300i,400,400i,700,700i" rel="stylesheet">';
+		// 	$pf_css = "font-family: 'IBM Plex Serif', serif;";
+		// 	$sf_css = "font-family: 'Merriweather', serif;";
+		// } elseif ($font_select == 5) {
+		// 	echo '<link href="https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i|Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">';
+		// 	$pf_css = "font-family: 'Muli', sans-serif;";
+		// 	$sf_css = "font-family: 'Raleway', sans-serif;";
+		// } elseif ($font_select == 6) {
+		// 	echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Zilla+Slab:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">';
+		// 	$pf_css = "font-family: 'Zilla Slab', serif;";
+		// 	$sf_css = "font-family: 'Open Sans', sans-serif;";
+		// } else {
+		// 	echo '<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">';
+		// 	echo '<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">';
+		// 	$pf_css = "font-family: 'Nunito Sans', sans-serif;";
+		// 	$sf_css = "font-family: 'Merriweather', serif;";
+		// };
+		//
+		// // $primary_font = get_field('primary_font_code', 'option');
+		// // //the_field('primary_font_code', 'option');
+		// // if($primary_font != '' && $primary_font_css != ''){
+		// // 	echo $primary_font;
+		// // }else{
+		// // 	echo '<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">';
+		// // }
+		// // $secondary_font = get_field('secondary_font_code', 'option');
+		// // //the_field('secondary_font_code', 'option');
+		// // if($secondary_font != '' && $primary_font_css != ''){
+		// // 	echo $secondary_font;
+		// // }else{
+		// // 	echo '<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">';
+		// // }
 
 	?>
 
@@ -102,10 +103,9 @@
 		.panel.wysiwyg blockquote,
 		.panel.wysiwyg blockquote p,
 		.panel.wysiwyg,
-		.main-navigation,
 		input,
 		textarea{
-			<?php echo $pf_css;?>
+			font-family: 'lust', serif;
 		}
 
 		.sf,
@@ -151,9 +151,9 @@
 		p.cta:focus{
 			color: <?php echo $tertiary_color; ?> !important;
 		}
-		.main-navigation ul{
-			background-color: <?php echo $primary_color; ?>;
-		}
+		/* .main-navigation ul{
+			background-color: <//?php echo $primary_color; ?>;
+		} */
 		input[type="submit"]{
 			color: <?php echo $primary_color; ?>;
 		}
@@ -170,39 +170,15 @@
 	<?php
 	$primary_color = get_field('primary_color', 'option');
 	?>
-	<header style="background:<?php echo $primary_color ?>">
-		<div class="container">
-			<div class="row">
-				<div class="columns-12">
-					<a class="logo" href="#top">
-						<img src="<?php echo $logo_url ?>" alt="">
-					</a>
-					<nav id="main-nav" class="main-navigation">
-						<?php if(has_nav_menu('main_nav')){
-									$defaults = array(
-										'theme_location'  => 'main_nav',
-										'menu'            => 'main_nav',
-										'container'       => false,
-										'container_class' => '',
-										'container_id'    => '',
-										'menu_class'      => 'menu',
-										'menu_id'         => '',
-										'echo'            => true,
-										'fallback_cb'     => 'wp_page_menu',
-										'before'          => '',
-										'after'           => '',
-										'link_before'     => '',
-										'link_after'      => '',
-										'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-										'depth'           => 0,
-										'walker'          => ''
-									); wp_nav_menu( $defaults );
-								}else{
-									echo "<p><em>main_nav</em> doesn't exist! Create it and it'll render here.</p>";
-								} ?>
-								<a id="mobileMenuTrigger">Menu</a>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</header>
+	<header>
+			<a class="logo" href="#top">
+				<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_FilledCircle_PurpleBlueGradient_large_72dpi.png" alt="">
+			</a>
+			<nav id="main-nav" class="main-navigation">
+				<ul id="menu-main_nav" class="menu">
+					<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#panel" class="">Know Your Options</a></li>
+					<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#footer" class="">Second Heading</a></li>
+				</ul>
+				<a id="mobileMenuTrigger">Menu</a>
+			</nav>
+		</header>

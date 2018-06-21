@@ -21,6 +21,7 @@ template: wvf
 */
 /* Base files. */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url("https://use.typekit.net/moj1ran.css");
 /* line 9, sass/base/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -339,49 +340,49 @@ li {
   float: left;
 }
 
-/* line 16, sass/base/_typography.scss */
+/* line 24, sass/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 300;
 }
 
-/* line 22, sass/base/_typography.scss */
+/* line 30, sass/base/_typography.scss */
 h1 {
   font-size: 4.0rem;
   line-height: 1.2;
   letter-spacing: -.1rem;
 }
 
-/* line 23, sass/base/_typography.scss */
+/* line 31, sass/base/_typography.scss */
 h2 {
   font-size: 3.6rem;
   line-height: 1.25;
   letter-spacing: -.1rem;
 }
 
-/* line 24, sass/base/_typography.scss */
+/* line 32, sass/base/_typography.scss */
 h3 {
   font-size: 3.0rem;
   line-height: 1.3;
   letter-spacing: -.1rem;
 }
 
-/* line 25, sass/base/_typography.scss */
+/* line 33, sass/base/_typography.scss */
 h4 {
   font-size: 2.4rem;
   line-height: 1.35;
   letter-spacing: -.08rem;
 }
 
-/* line 26, sass/base/_typography.scss */
+/* line 34, sass/base/_typography.scss */
 h5 {
   font-size: 1.8rem;
   line-height: 1.5;
   letter-spacing: -.05rem;
 }
 
-/* line 27, sass/base/_typography.scss */
+/* line 35, sass/base/_typography.scss */
 h6 {
   font-size: 1.5rem;
   line-height: 1.6;
@@ -389,27 +390,27 @@ h6 {
 }
 
 @media (max-width: 750px) {
-  /* line 33, sass/base/_typography.scss */
+  /* line 41, sass/base/_typography.scss */
   h3 {
     font-size: 3.6rem;
   }
 
-  /* line 34, sass/base/_typography.scss */
+  /* line 42, sass/base/_typography.scss */
   h4 {
     font-size: 3.0rem;
   }
 
-  /* line 35, sass/base/_typography.scss */
+  /* line 43, sass/base/_typography.scss */
   h5 {
     font-size: 2.4rem;
   }
 
-  /* line 36, sass/base/_typography.scss */
+  /* line 44, sass/base/_typography.scss */
   h6 {
     font-size: 1.5rem;
   }
 }
-/* line 39, sass/base/_typography.scss */
+/* line 47, sass/base/_typography.scss */
 p {
   font-size: 1.4rem;
   line-height: 1.428;
@@ -924,10 +925,13 @@ td:last-child {
 header {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
   position: fixed;
-  width: 100%;
   z-index: 100;
-  height: 64px;
   overflow: hidden;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  text-align: center;
+  background-color: #4C4B6B;
 }
 @media screen and (max-width: 1200px) {
   /* line 1, sass/modules/_header.scss */
@@ -936,30 +940,25 @@ header {
   }
 }
 
-/* line 13, sass/modules/_header.scss */
+/* line 18, sass/modules/_header.scss */
 .logo {
   display: inline-block;
   height: 64px;
   overflow: hidden;
 }
-/* line 17, sass/modules/_header.scss */
+/* line 22, sass/modules/_header.scss */
 .logo img {
   height: 38px;
   width: auto;
   margin: 13px 0;
 }
 
-/* line 24, sass/modules/_header.scss */
-.main-navigation {
-  display: inline-block;
-  float: right;
-}
-/* line 27, sass/modules/_header.scss */
+/* line 32, sass/modules/_header.scss */
 .main-navigation ul {
   margin: 0px;
 }
 @media screen and (max-width: 1200px) {
-  /* line 27, sass/modules/_header.scss */
+  /* line 32, sass/modules/_header.scss */
   .main-navigation ul {
     position: fixed;
     top: 64px;
@@ -971,57 +970,60 @@ header {
     z-index: 10;
   }
 }
-/* line 40, sass/modules/_header.scss */
+/* line 45, sass/modules/_header.scss */
 .main-navigation ul li {
   list-style-type: none;
-  display: inline-block;
-  margin: 0 0 0 10px;
+  margin: 0 0 10px 0;
   transition: background-color 0.2s ease-in-out;
 }
 @media screen and (max-width: 1200px) {
-  /* line 40, sass/modules/_header.scss */
+  /* line 45, sass/modules/_header.scss */
   .main-navigation ul li {
     display: block;
     text-align: center;
     margin-left: 0px;
   }
 }
-/* line 50, sass/modules/_header.scss */
-.main-navigation ul li:hover {
-  background-color: rgba(0, 0, 0, 0.15);
-}
-/* line 53, sass/modules/_header.scss */
+/* line 59, sass/modules/_header.scss */
 .main-navigation ul li a {
-  display: inline-block;
-  line-height: 64px;
-  font-size: 1.5rem;
+  font-family: "Isidora Sans W00 Bold";
+  font-size: 15px;
   color: #FFFFFF;
-  padding: 0 20px;
+  padding: 15px;
   letter-spacing: 1.5px;
-  transition: box-shadow 0.2s ease-in-out;
-  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  display: block;
 }
-/* line 64, sass/modules/_header.scss */
+/* line 73, sass/modules/_header.scss */
 .main-navigation ul li a:hover {
   text-decoration: none;
+  opacity: 0.5;
 }
-/* line 67, sass/modules/_header.scss */
+/* line 78, sass/modules/_header.scss */
+.main-navigation ul li a:focus {
+  text-decoration: none;
+}
+/* line 81, sass/modules/_header.scss */
+.main-navigation ul li a:active {
+  text-decoration: none;
+}
+/* line 84, sass/modules/_header.scss */
 .main-navigation ul li a.active {
-  box-shadow: inset 0px -2px 0px #FFFFFF;
+  opacity: 0.5;
 }
 
-/* line 75, sass/modules/_header.scss */
+/* line 93, sass/modules/_header.scss */
 #mobileMenuTrigger {
   display: inline-block;
   line-height: 64px;
-  font-size: 1.5rem;
+  font-size: 15px;
   color: #FFFFFF;
   padding: 0 20px;
   letter-spacing: 1.5px;
   cursor: pointer;
   font-weight: 800;
 }
-/* line 86, sass/modules/_header.scss */
+/* line 104, sass/modules/_header.scss */
 #mobileMenuTrigger:hover {
   text-decoration: none;
 }
@@ -1097,7 +1099,7 @@ footer form p {
 .footer-title {
   font-size: 3.6rem;
   letter-spacing: 2.16px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "lust", serif;
   font-weight: 600;
 }
 
@@ -1148,31 +1150,38 @@ footer form p {
   }
 }
 
-/* line 1, sass/modules/_modules.scss */
-body {
-  background: transparent !important;
+@media screen and (min-width: 1200px) {
+  /* line 2, sass/modules/_modules.scss */
+  main, #footer {
+    padding-left: 100px;
+  }
 }
 
-/* line 6, sass/modules/_modules.scss */
+/* line 8, sass/modules/_modules.scss */
 .welcome-gate {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  color: #FFFFFF;
-  padding: 50vh 0 0 0;
+  color: #3F3E3B;
+  padding: 45vh 0 0 0;
   text-align: center;
 }
-/* line 13, sass/modules/_modules.scss */
+/* line 15, sass/modules/_modules.scss */
 .welcome-gate .container {
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-55%);
+  -ms-transform: translateY(-55%);
+  transform: translateY(-55%);
 }
-/* line 18, sass/modules/_modules.scss */
+/* line 20, sass/modules/_modules.scss */
 .welcome-gate .hero {
   position: fixed;
 }
-/* line 21, sass/modules/_modules.scss */
+/* line 23, sass/modules/_modules.scss */
+.welcome-gate img.feature-image {
+  height: 390px;
+  width: auto;
+}
+/* line 27, sass/modules/_modules.scss */
 .welcome-gate #scrollLink {
   position: absolute;
   bottom: 50px;
@@ -1182,31 +1191,30 @@ body {
   transform: translateX(-50%);
   cursor: pointer;
 }
-/* line 29, sass/modules/_modules.scss */
+/* line 35, sass/modules/_modules.scss */
 .welcome-gate #scrollLink svg {
   width: 65px;
 }
-/* line 33, sass/modules/_modules.scss */
+/* line 39, sass/modules/_modules.scss */
 .welcome-gate .sign {
   max-width: 845px;
   margin: 0 auto;
 }
-/* line 37, sass/modules/_modules.scss */
+/* line 43, sass/modules/_modules.scss */
 .welcome-gate .sign h1 {
-  letter-spacing: 2.5px;
   line-height: 65px;
   margin-bottom: 20px;
-  font-weight: 300;
-  font-style: italic;
+  font-size: 36px;
+  letter-spacing: 2.25px;
 }
 @media screen and (max-width: 480px) {
-  /* line 37, sass/modules/_modules.scss */
+  /* line 43, sass/modules/_modules.scss */
   .welcome-gate .sign h1 {
     line-height: normal;
     font-size: 3.6rem;
   }
 }
-/* line 50, sass/modules/_modules.scss */
+/* line 57, sass/modules/_modules.scss */
 .welcome-gate .sign p {
   font-size: 1.6rem;
   letter-spacing: 0.8px;
@@ -1214,106 +1222,115 @@ body {
   font-weight: 300;
 }
 @media screen and (max-width: 480px) {
-  /* line 50, sass/modules/_modules.scss */
+  /* line 57, sass/modules/_modules.scss */
   .welcome-gate .sign p {
     line-height: 20px;
     font-size: 1.4rem;
   }
 }
-/* line 61, sass/modules/_modules.scss */
+/* line 68, sass/modules/_modules.scss */
 .welcome-gate .sign a {
   color: #FFFFFF;
   text-decoration: underline;
 }
-/* line 64, sass/modules/_modules.scss */
+/* line 71, sass/modules/_modules.scss */
 .welcome-gate .sign a:hover {
   text-decoration: none;
 }
 
-/* line 71, sass/modules/_modules.scss */
+/* line 78, sass/modules/_modules.scss */
 .primary {
   background: #c36256;
 }
 
-/* line 75, sass/modules/_modules.scss */
+/* line 82, sass/modules/_modules.scss */
 .panel {
   padding: 76px 0;
   position: relative;
   overflow: hidden;
   background-color: #FFFFFF;
 }
-/* line 80, sass/modules/_modules.scss */
+/* line 87, sass/modules/_modules.scss */
 .panel.cards {
   background-color: transparent;
 }
-/* line 82, sass/modules/_modules.scss */
+/* line 89, sass/modules/_modules.scss */
+.panel.cards.bc-grid {
+  background-color: #EBE1D1;
+}
+/* line 92, sass/modules/_modules.scss */
 .panel.cards .hero {
   z-index: 0;
 }
-/* line 85, sass/modules/_modules.scss */
+/* line 95, sass/modules/_modules.scss */
 .panel.cards .container {
   z-index: 1;
 }
-/* line 88, sass/modules/_modules.scss */
+/* line 98, sass/modules/_modules.scss */
 .panel.cards .row {
   z-index: 2;
+  margin-bottom: 20px;
 }
-/* line 91, sass/modules/_modules.scss */
+/* line 101, sass/modules/_modules.scss */
+.panel.cards .row:last-of-type {
+  margin-bottom: 0px;
+}
+/* line 105, sass/modules/_modules.scss */
 .panel.cards .card {
   z-index: 2;
 }
-/* line 96, sass/modules/_modules.scss */
+/* line 110, sass/modules/_modules.scss */
 .panel.wysiwyg h1, .panel.wysiwyg h2, .panel.wysiwyg h3, .panel.wysiwyg h4, .panel.wysiwyg h5, .panel.wysiwyg h6 {
   margin-bottom: 1rem;
 }
-/* line 98, sass/modules/_modules.scss */
+/* line 112, sass/modules/_modules.scss */
 .panel.wysiwyg h1 a, .panel.wysiwyg h2 a, .panel.wysiwyg h3 a, .panel.wysiwyg h4 a, .panel.wysiwyg h5 a, .panel.wysiwyg h6 a {
   font-weight: inherit;
   text-decoration: underline;
 }
-/* line 103, sass/modules/_modules.scss */
+/* line 117, sass/modules/_modules.scss */
 .panel.wysiwyg h1 {
   font-size: 4.8rem;
   letter-spacing: 1.5px;
   color: #c36256;
   font-weight: 600;
 }
-/* line 111, sass/modules/_modules.scss */
+/* line 125, sass/modules/_modules.scss */
 .panel.wysiwyg h2 {
   font-size: 4.2rem;
   letter-spacing: 1.2px;
   color: #2F4858;
   font-weight: 200;
 }
-/* line 119, sass/modules/_modules.scss */
+/* line 133, sass/modules/_modules.scss */
 .panel.wysiwyg h3 {
   font-size: 3.6rem;
   color: #2F4858;
   letter-spacing: 1.03px;
   font-weight: 400;
 }
-/* line 127, sass/modules/_modules.scss */
+/* line 141, sass/modules/_modules.scss */
 .panel.wysiwyg h4 {
   font-size: 3.2rem;
   color: #2F4858;
   letter-spacing: 1px;
   font-weight: 600;
 }
-/* line 135, sass/modules/_modules.scss */
+/* line 149, sass/modules/_modules.scss */
 .panel.wysiwyg h5 {
   font-size: 2.8rem;
   color: #c36256;
   letter-spacing: 0.88px;
   font-weight: 700;
 }
-/* line 143, sass/modules/_modules.scss */
+/* line 157, sass/modules/_modules.scss */
 .panel.wysiwyg h6 {
   font-size: 2.4rem;
   color: #2F4858;
   letter-spacing: 0.75px;
   font-weight: 500;
 }
-/* line 151, sass/modules/_modules.scss */
+/* line 165, sass/modules/_modules.scss */
 .panel.wysiwyg p, .panel.wysiwyg ul, .panel.wysiwyg li {
   font-weight: 400;
   font-size: 1.4rem;
@@ -1321,7 +1338,7 @@ body {
   line-height: 24px;
   color: #909090;
 }
-/* line 159, sass/modules/_modules.scss */
+/* line 173, sass/modules/_modules.scss */
 .panel.wysiwyg blockquote {
   letter-spacing: 0.4px;
   border-left: 1px solid #909090;
@@ -1330,45 +1347,45 @@ body {
   font-style: italic;
   font-size: 2rem;
 }
-/* line 168, sass/modules/_modules.scss */
+/* line 182, sass/modules/_modules.scss */
 .panel.wysiwyg blockquote p {
   font-weight: 400;
   font-style: italic;
   font-size: 2rem;
 }
-/* line 176, sass/modules/_modules.scss */
+/* line 190, sass/modules/_modules.scss */
 .panel.wysiwyg ul li {
   list-style-type: disc;
 }
-/* line 179, sass/modules/_modules.scss */
+/* line 193, sass/modules/_modules.scss */
 .panel.wysiwyg ol li {
   list-style-type: decimal;
 }
-/* line 182, sass/modules/_modules.scss */
+/* line 196, sass/modules/_modules.scss */
 .panel.wysiwyg img {
   max-width: 100%;
   height: auto;
 }
-/* line 186, sass/modules/_modules.scss */
+/* line 200, sass/modules/_modules.scss */
 .panel.wysiwyg a {
   color: #895EBD;
   font-weight: 700;
   transition: opacity 0.2s ease-in-out;
   text-decoration: underline;
 }
-/* line 191, sass/modules/_modules.scss */
+/* line 205, sass/modules/_modules.scss */
 .panel.wysiwyg a:hover {
   text-decoration: none;
   opacity: 0.8;
 }
-/* line 198, sass/modules/_modules.scss */
+/* line 212, sass/modules/_modules.scss */
 .panel.intro h2 {
   font-size: 5.4rem;
   letter-spacing: 0.46px;
   line-height: 62px;
   font-weight: 500;
 }
-/* line 206, sass/modules/_modules.scss */
+/* line 220, sass/modules/_modules.scss */
 .panel.intro a.cta {
   line-height: 50px;
   color: #FFFFFF;
@@ -1382,30 +1399,30 @@ body {
   font-weight: 400;
 }
 @media screen and (max-width: 750px) {
-  /* line 206, sass/modules/_modules.scss */
+  /* line 220, sass/modules/_modules.scss */
   .panel.intro a.cta {
     margin-bottom: 40px;
     margin-top: 0px;
   }
 }
-/* line 224, sass/modules/_modules.scss */
+/* line 238, sass/modules/_modules.scss */
 .panel.intro a.cta p {
   color: #FFFFFF;
 }
-/* line 227, sass/modules/_modules.scss */
+/* line 241, sass/modules/_modules.scss */
 .panel.intro a.cta:hover {
   background: #FFFFFF;
   color: #c36256;
   border: 2px solid #FFFFFF;
 }
-/* line 233, sass/modules/_modules.scss */
+/* line 247, sass/modules/_modules.scss */
 .panel.intro p {
   color: #909090;
   font-size: 1.4rem;
   line-height: 22px;
   font-weight: 700;
 }
-/* line 239, sass/modules/_modules.scss */
+/* line 253, sass/modules/_modules.scss */
 .panel.intro p.cta {
   line-height: 50px;
   color: #FFFFFF;
@@ -1419,22 +1436,22 @@ body {
   font-weight: 400;
 }
 @media screen and (max-width: 750px) {
-  /* line 239, sass/modules/_modules.scss */
+  /* line 253, sass/modules/_modules.scss */
   .panel.intro p.cta {
     margin-bottom: 40px;
     margin-top: 0px;
   }
 }
-/* line 257, sass/modules/_modules.scss */
+/* line 271, sass/modules/_modules.scss */
 .panel.intro p.cta p {
   color: #FFFFFF;
 }
-/* line 260, sass/modules/_modules.scss */
+/* line 274, sass/modules/_modules.scss */
 .panel.intro p.cta:hover {
   background: #FFFFFF;
 }
 
-/* line 269, sass/modules/_modules.scss */
+/* line 283, sass/modules/_modules.scss */
 .hero {
   position: absolute;
   top: 0;
@@ -1447,7 +1464,7 @@ body {
   background-position: center;
 }
 
-/* line 283, sass/modules/_modules.scss */
+/* line 297, sass/modules/_modules.scss */
 .img-filter {
   position: absolute;
   top: 0;
@@ -1457,56 +1474,56 @@ body {
   opacity: 0.8;
 }
 
-/* line 293, sass/modules/_modules.scss */
+/* line 307, sass/modules/_modules.scss */
 .card {
   position: relative;
   text-align: center;
   color: #FFFFFF;
 }
 @media screen and (max-width: 750px) {
-  /* line 293, sass/modules/_modules.scss */
+  /* line 307, sass/modules/_modules.scss */
   .card {
     margin-bottom: 60px;
   }
-  /* line 299, sass/modules/_modules.scss */
+  /* line 313, sass/modules/_modules.scss */
   .card:last-of-type {
     margin-bottom: 0px;
   }
 }
-/* line 303, sass/modules/_modules.scss */
+/* line 317, sass/modules/_modules.scss */
 .card .text {
   max-width: 255px;
   margin: 0 auto;
 }
-/* line 307, sass/modules/_modules.scss */
+/* line 321, sass/modules/_modules.scss */
 .card a {
   color: #FFFFFF;
 }
-/* line 309, sass/modules/_modules.scss */
+/* line 323, sass/modules/_modules.scss */
 .card a:hover {
   text-decoration: none;
 }
-/* line 311, sass/modules/_modules.scss */
+/* line 325, sass/modules/_modules.scss */
 .card a:hover img {
   -webkit-transform: translateY(-8px);
   -ms-transform: translateY(-8px);
   transform: translateY(-8px);
 }
-/* line 318, sass/modules/_modules.scss */
+/* line 332, sass/modules/_modules.scss */
 .card h3 {
   font-size: 3.2rem;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-family: "Isidora Sans W00 Black";
   font-weight: 600;
 }
-/* line 325, sass/modules/_modules.scss */
+/* line 339, sass/modules/_modules.scss */
 .card p {
+  font-family: "Isidora Sans W00 Regular";
   color: #FFFFFF;
-  font-weight: 200;
-  font-size: 1.4rem;
-  letter-spacing: 0.47px;
-  line-height: 25px;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
 }
-/* line 333, sass/modules/_modules.scss */
+/* line 345, sass/modules/_modules.scss */
 .card img {
   transition: transform 0.2s ease-in-out;
   max-height: 140px;
@@ -1514,7 +1531,21 @@ body {
   margin-bottom: 2rem;
 }
 
-/* line 341, sass/modules/_modules.scss */
+/* line 353, sass/modules/_modules.scss */
+.title-bar {
+  background-color: #D5BB38;
+  text-align: center;
+  padding: 20px 0;
+}
+/* line 357, sass/modules/_modules.scss */
+.title-bar p {
+  color: #FFFFFF;
+  font-family: "Isidora Sans W00 Black";
+  font-size: 36px;
+  letter-spacing: 1.12px;
+}
+
+/* line 365, sass/modules/_modules.scss */
 .clearfix {
   clear: both;
 }

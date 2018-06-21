@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* Template Name: Campaign Landing Template*/
 get_header('cpl'); ?>
 
@@ -22,7 +22,7 @@ get_header('cpl'); ?>
 	<?php }; ?>
 		<div class="container">
 			<div class="row">
-				<img src="">
+				<img class="feature-image" src="http://localhost:8888/wvfree/wp-content/uploads/larc.png">
 				<div class="sign sf">
 					<h1 id="welcomeTitle" class="pf"><?php the_field('statement'); ?></h1>
 					<p id="welcomeDesc" class="sf"><?php the_field('main_blurb'); ?></p>
@@ -37,6 +37,74 @@ get_header('cpl'); ?>
 			</svg>
 		</a>
 	</div>
+	<div class="title-bar">
+		<p>The best birth control is the one that you lvoe</p>
+	</div>
+	<div class="panel cards bc-grid" id="new-cards">
+		<div class="container">
+						<div class="row">
+								<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+																		<a>
+										<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_FilledCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
+										<div class="text">
+											<h3 class="">title</h3>
+											<p class="sf">mgdklgm</p>
+										</div>
+									</a>
+								</div>
+								<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+																		<a>
+										<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_HollowCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
+										<div class="text">
+											<h3 class="">Title</h3>
+											<p class="sf">fmreklfgmdklrs</p>
+										</div>
+									</a>
+								</div>
+								<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+																		<a>
+										<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_HollowCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
+										<div class="text">
+											<h3 class="">gmkregd</h3>
+											<p class="sf">mgrklm ergrd gregrd</p>
+										</div>
+									</a>
+								</div>
+					</div>
+					<div class="row">
+							<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+																	<a>
+									<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_FilledCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
+									<div class="text">
+										<h3 class="pf">title</h3>
+										<p class="sf">mgdklgm</p>
+									</div>
+								</a>
+							</div>
+							<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+																	<a>
+									<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_HollowCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
+									<div class="text">
+										<h3 class="pf">Title</h3>
+										<p class="sf">fmreklfgmdklrs</p>
+									</div>
+								</a>
+							</div>
+							<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+																	<a>
+									<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_HollowCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
+									<div class="text">
+										<h3 class="pf">gmkregd</h3>
+										<p class="sf">mgrklm ergrd gregrd</p>
+									</div>
+								</a>
+							</div>
+				</div>
+			</div>
+		</div>
+		<div class="map-panel">
+
+		</div>
 	<?php
 	if(have_rows('panels')):
 		while(have_rows('panels')) : the_row();

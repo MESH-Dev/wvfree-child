@@ -1,6 +1,35 @@
 <?php
 /* Template Name: Campaign Landing Template*/
 get_header('cpl'); ?>
+<header>
+	<a class="logo" href="#top">
+		<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_FilledCircle_PurpleBlueGradient_large_72dpi.png" alt="">
+	</a>
+	<nav id="main-nav" class="main-navigation">
+		<ul id="menu-main_nav" class="menu">
+			<?php 
+				//$panels = get_field('panels');
+				//$panel_ids = [];
+					if (have_rows('panels')):
+						while (have_rows('panels')):the_row();
+							$panel_id = get_sub_field('panel_id');
+							$id_link_text = ucwords($panel_id);
+							$id_text_lower = strtolower($panel_id);
+							$id_add_underscore = str_replace(' ', '_', $id_text_lower);
+							if($panel_id){
+			?>
+			<li class=""><a href="#<?php echo $id_add_underscore; ?>" class=""><?php echo $id_link_text; ?></a></li>
+			<?php 
+			}	
+				endwhile; endif;		
+					//var_dump($panels);
+			?>
+			<!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#panel" class="">Know Your Options</a></li> -->
+			<!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#footer" class="">Second Heading</a></li> -->
+		</ul>
+		<a id="mobileMenuTrigger">Menu</a>
+	</nav>
+</header>
 
 <main id="content">
 	<?php
@@ -9,9 +38,10 @@ get_header('cpl'); ?>
 	$bg_url = $bg_img['sizes']['background-fullscreen'];
 	//$bg_url = $bg_img['url'];
 
+	//Not In use
 	$primary_color = get_field('primary_color', 'option');
-		$secondary_color = get_field('secondary_color', 'option');
-		$tertiary_color = get_field('tertiary_color', 'options');
+	$secondary_color = get_field('secondary_color', 'option');
+	$tertiary_color = get_field('tertiary_color', 'options');
 
 	if (!empty($bg_url)) { ?>
 		<div class="welcome-gate" id="top">
@@ -22,10 +52,17 @@ get_header('cpl'); ?>
 	<?php }; ?>
 		<div class="container">
 			<div class="row">
-				<img class="feature-image" src="http://localhost:8888/wvfree/wp-content/uploads/larc.png">
+				<!-- Campaign logo -->
+				<?php 
+					$cp_logo = get_field('campaign_logo');
+					$cp_logo_url = $cp_logo['sizes']['large'];
+				?>
+				<img class="feature-image" src="<?php echo $campaign_logo; ?>">
 				<div class="sign sf">
 					<h1 id="welcomeTitle" class="pf"><?php the_field('statement'); ?></h1>
-					<p id="welcomeDesc" class="sf"><?php the_field('main_blurb'); ?></p>
+					<?php if (get_field('main_blurb') != '') { ?>
+						<p id="welcomeDesc" class="sf"><?php the_field('main_blurb'); ?></p>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -37,82 +74,20 @@ get_header('cpl'); ?>
 			</svg>
 		</a>
 	</div>
-	<div class="title-bar">
-		<p>The best birth control is the one that you lvoe</p>
-	</div>
-	<div class="panel cards bc-grid" id="new-cards">
-		<div class="container">
-						<div class="row">
-								<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-																		<a>
-										<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_FilledCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
-										<div class="text">
-											<h3 class="">title</h3>
-											<p class="sf">mgdklgm</p>
-										</div>
-									</a>
-								</div>
-								<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-																		<a>
-										<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_HollowCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
-										<div class="text">
-											<h3 class="">Title</h3>
-											<p class="sf">fmreklfgmdklrs</p>
-										</div>
-									</a>
-								</div>
-								<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-																		<a>
-										<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_HollowCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
-										<div class="text">
-											<h3 class="">gmkregd</h3>
-											<p class="sf">mgrklm ergrd gregrd</p>
-										</div>
-									</a>
-								</div>
-					</div>
-					<div class="row">
-							<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-																	<a>
-									<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_FilledCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
-									<div class="text">
-										<h3 class="pf">title</h3>
-										<p class="sf">mgdklgm</p>
-									</div>
-								</a>
-							</div>
-							<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-																	<a>
-									<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_HollowCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
-									<div class="text">
-										<h3 class="pf">Title</h3>
-										<p class="sf">fmreklfgmdklrs</p>
-									</div>
-								</a>
-							</div>
-							<div class="card columns-4" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-																	<a>
-									<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_HollowCircle_PurpleBlueGradient_large_72dpi-768x768.png" alt="">
-									<div class="text">
-										<h3 class="pf">gmkregd</h3>
-										<p class="sf">mgrklm ergrd gregrd</p>
-									</div>
-								</a>
-							</div>
-				</div>
-			</div>
-		</div>
-		<div class="map-panel">
 
-		</div>
+	
 	<?php
 	if(have_rows('panels')):
 		while(have_rows('panels')) : the_row();
-		$panel_type = get_sub_field('panel_type');
+			$panel_type = get_sub_field('panel_type');
+			$panel_name = get_sub_field('panel_id');
+			$id_link_text2 = ucwords($panel_name);
+			$id_text_lower2 = strtolower($panel_name);
+			$id_add_underscore2 = str_replace(' ', '_', $id_text_lower);
 	?>
 				<?php
 				if ($panel_type == 'intro') { ?>
-					<div class="panel <?php the_sub_field('panel_type'); ?>" id="<?php the_sub_field('panel_id'); ?>">
+					<div class="panel <?php the_sub_field('panel_type'); ?>" id="<?php echo $id_add_underscore2; ?>">
 						<div class="container">
 							<div class="row">
 								<div class="columns-5">
@@ -137,16 +112,21 @@ get_header('cpl'); ?>
 				$panel_bg = get_sub_field('panel_background_image');
 				$panel_bg_url = $panel_bg['sizes']['background-fullscreen'];
 				if (!empty($panel_bg_url)) { ?>
-					<div class="panel <?php the_sub_field('panel_type'); ?>" id="<?php the_sub_field('panel_id'); ?>">
+					<div class="panel <?php the_sub_field('panel_type'); ?>" id="<?php echo $id_add_underscore2; ?>">
 						<div class="hero" style="background-image:url('<?php echo $panel_bg_url ?>')"></div>
 						<div class="img-filter" style="background-color:<?php echo $secondary_color ?>"></div>
 				<?php } else{ ?>
-					<div class="panel <?php the_sub_field('panel_type'); ?>" id="<?php the_sub_field('panel_id'); ?>" style="background-color:<?php echo $secondary_color ?>;">
+					<div class="panel <?php the_sub_field('panel_type'); ?> bc-grid" id="<?php the_sub_field('panel_id'); ?>" style="background-color:<?php echo $secondary_color ?>;">
 				<?php }; ?>
 					<div class="container">
-						<div class="row">
+						
 							<?php
 							$cards = get_sub_field('cards');
+							$cta_title = get_sub_field('cta_card_title');
+							$cta_link_text = get_sub_field('cta_card_link_text');
+							$cta_card_link = get_sub_field('cta_card_link');
+							$cta_external = get_sub_field('external');
+							//$cta_
 							$card_num = count($cards);
 							$width_class = '';
 							if ($card_num == 1) {
@@ -158,28 +138,57 @@ get_header('cpl'); ?>
 							} elseif ($card_num == 4) {
 								$width_class = 'columns-3';
 							}
-							if(have_rows('cards')): while(have_rows('cards')): the_row();
+							$card_cnt=0;
+							if(have_rows('cards')): ?>
+							<div class="row">
+							<?php while(have_rows('cards')): the_row();
+								$card_cnt++;
 							?>
-								<div class="card <?php echo $width_class ?>">
+								<div class="card columns-4 <?php echo $card_cnt; ?>">
 									<?php
 									$card_img = get_sub_field('card_image');
 									$card_img_url = $card_img['sizes']['medium_large'];
 									$card_link = get_sub_field('card_link');
+									$card_title = get_sub_field('card_title');
+									$card_description = get_sub_field('card_blurb');
 									?>
-									<a <?php if(!empty($card_link)){ ?> href="<?php echo $card_link ?>" <?php }; ?>>
-										<img src="<?php echo $card_img_url ?>" alt="">
+									
+										<img src="<?php echo $card_img_url; ?>" alt="">
 										<div class="text">
-											<h3 class="pf"><?php the_sub_field('card_title'); ?></h3>
-											<p class="sf"><?php the_sub_field('card_blurb'); ?></p>
+											<h3 class="pf"><?php echo $card_title; ?> <?php echo $card_cnt; ?></h3>
+											<p class="sf"><?php echo $card_description; ?></p>
 										</div>
-									</a>
+
+										
 								</div>
-							<?php endwhile; endif; ?>
-						</div>
+								<?if ($card_cnt % 3 == 0){
+								echo '</div><div class="row">';
+							}elseif($card_cnt == $card_num){ ?>
+								<div class='card columns-4 dl'>
+									<div class="text">
+										<h3 class="pf" style="color:blue;"><?php echo $cta_title; ?></h3>
+										<p class="sf"><?php echo $cta_link_text; ?></p>
+									</div>
+								</div>
+							</div><!--end final row -->
+							<?php } ?>
+
+							
+							<?php endwhile; ?>
+							
+						<?php endif; ?>
+						<!-- <div class='card columns-4 dl'>
+									<div class="text">
+										<h3 class="pf" style="color:red;"><?php echo $cta_title; ?></h3>
+										<p class="sf"><?php echo $cta_link_text; ?></p>
+									</div>
+								</div>
+							</div> --><!--end final row -->
+						<!-- </div> -->
 					</div>
 				</div>
 			<?php	} elseif ($panel_type == 'wysiwyg') { ?>
-				<div class="panel wysiwyg" id="<?php the_sub_field('panel_id'); ?>">
+				<div class="panel wysiwyg" id="<?php echo $id_add_underscore2; ?>">
 					<div class="container">
 						<div class="row">
 							<?php
@@ -200,8 +209,40 @@ get_header('cpl'); ?>
 						</div>
 					</div>
 				</div>
-			<?php }; ?>
-	<?php endwhile; endif; ?>
+			<?php }elseif($panel_type == 'title_bar') {
+				$tb_text = get_field('title_row_text')
+				?>
+			<div class="title-bar">
+				<p><?php echo $tb_text; ?></p>
+			</div>
+			<?php }elseif($panel_type == 'image'){ 
+				$image = get_sub_field('image_panel');
+				$image_url = $image['sizes']['background-fullscreen'];
+				?>
+				<div class="image-panel" style="background-image:url('<?php echo $image_url; ?>'); background-size:cover, background-repeat:no-repeat; background-position: center center; height:80vh;"></div>
+			<?php }elseif($panel_type == 'locations'){ 
+				$loc_cnt=0;
+				if(have_rows('locations_grid')): ?>
+				<div class="container">
+					<div class="row">
+				<?php 	while(have_rows('locations_grid')):the_row();
+				$location_name = get_sub_field('location_name');
+				$location_address = get_sub_field('location_address');
+				$directions = str_replace('<br />', ' ', $location_address);
+				$loc_cnt++;
+				?>
+					<div class="columns-4">
+						<h2><?php echo $loc_cnt; ?>. <?php echo $location_name; ?>
+						<p><?php echo $location_address; ?></p>
+						<a class="directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=current+location&amp;destination=<?php echo $directions; ?>" target="_blank">Get Directions >></a>
+					</div>	
+				<?php endwhile; ?>
+					</div> <!-- end row -->
+				</div> <!-- end container -->
+			<?php endif; ?>	
+			<!-- https://www.google.com/maps?saddr=My+location&daddr= -->
+
+	<?php  } endwhile; endif; ?>
 
 </main><!-- End of Content -->
 

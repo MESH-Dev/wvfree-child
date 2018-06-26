@@ -5,9 +5,15 @@ main, #footer{
    }
 }
 
+main#content{
+   position:relative;
+   z-index: 5;
+}
+
 .welcome-gate{
    height: 100vh;
    position: relative;
+   z-index:5;
    overflow: hidden;
    color: $alt-gray;
    padding: 45vh 0 0 0;
@@ -18,7 +24,7 @@ main, #footer{
       transform: translateY(-55%);
    }
    .hero{
-      position: fixed;
+      //position: fixed;
    }
    img.feature-image{
       height: 390px;
@@ -104,6 +110,22 @@ main, #footer{
       }
       .card{
          z-index: 2;
+
+         &.yellow{
+
+         }
+
+         &.red{
+
+         }
+
+         &.blue{
+
+         }
+
+         &.purple{
+            
+         }
       }
    }
    &.wysiwyg{
@@ -289,7 +311,7 @@ main, #footer{
    z-index: -2;
    // width: 100%;
    // height: 100%;
-   filter: grayscale(1);
+   //filter: grayscale(1);
    background-size: cover;
    background-position: center;
 }

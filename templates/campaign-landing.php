@@ -7,7 +7,7 @@ get_header('cpl'); ?>
 	</a>
 	<nav id="main-nav" class="main-navigation">
 		<ul id="menu-main_nav" class="menu">
-			<?php 
+			<?php
 				//$panels = get_field('panels');
 				//$panel_ids = [];
 					if (have_rows('panels')):
@@ -19,9 +19,9 @@ get_header('cpl'); ?>
 							if($panel_id){
 			?>
 			<li class=""><a href="#<?php echo $id_add_underscore; ?>" class=""><?php echo $id_link_text; ?></a></li>
-			<?php 
-			}	
-				endwhile; endif;		
+			<?php
+			}
+				endwhile; endif;
 					//var_dump($panels);
 			?>
 			<!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#panel" class="">Know Your Options</a></li> -->
@@ -50,19 +50,19 @@ get_header('cpl'); ?>
 	<?php } else{ ?>
 		<div class="welcome-gate" id="top" style="background:<?php echo $primary_color ?>;">
 	<?php }; ?>
-		<div class="container">
-			<div class="row">
+		<div class="mesh-container">
+			<div class="mesh-row">
 				<!-- Campaign logo -->
-				<?php 
+				<?php
 					$cp_logo = get_field('campaign_logo');
 					$cp_logo_url = $cp_logo['sizes']['large'];
 				?>
-				<img class="feature-image" src="<?php echo $campaign_logo; ?>">
+				<img class="feature-image" src="<?php echo $cp_logo_url; ?>">
 				<div class="sign sf">
 					<h1 id="welcomeTitle" class="pf"><?php the_field('statement'); ?></h1>
-					<?php if (get_field('main_blurb') != '') { ?>
-						<p id="welcomeDesc" class="sf"><?php the_field('main_blurb'); ?></p>
-					<?php } ?>
+					<!-- <//?php if (get_field('main_blurb') != '') { ?>
+						<p id="welcomeDesc" class="sf"><//?php the_field('main_blurb'); ?></p>
+					<//?php } ?> -->
 				</div>
 			</div>
 		</div>
@@ -75,7 +75,7 @@ get_header('cpl'); ?>
 		</a>
 	</div>
 
-	
+
 	<?php
 	if(have_rows('panels')):
 		while(have_rows('panels')) : the_row();
@@ -88,8 +88,8 @@ get_header('cpl'); ?>
 				<?php
 				if ($panel_type == 'intro') { ?>
 					<div class="panel <?php the_sub_field('panel_type'); ?>" id="<?php echo $id_add_underscore2; ?>">
-						<div class="container">
-							<div class="row">
+						<div class="mesh-container">
+							<div class="mesh-row">
 								<div class="columns-5">
 									<h2 class="blurb pf" style="color:<?php echo $primary_color ?>"><?php the_sub_field('main_blurb'); ?></h2>
 									<?php
@@ -116,10 +116,10 @@ get_header('cpl'); ?>
 						<div class="hero" style="background-image:url('<?php echo $panel_bg_url ?>')"></div>
 						<div class="img-filter" style="background-color:<?php echo $secondary_color ?>"></div>
 				<?php } else{ ?>
-					<div class="panel <?php the_sub_field('panel_type'); ?> bc-grid" id="<?php the_sub_field('panel_id'); ?>" style="background-color:<?php echo $secondary_color ?>;">
+					<div class="panel <?php the_sub_field('panel_type'); ?> bc-grid" id="<?php the_sub_field('panel_id'); ?>">
 				<?php }; ?>
-					<div class="container">
-						
+					<div class="mesh-container">
+
 							<?php
 							$cards = get_sub_field('cards');
 							$cta_title = get_sub_field('cta_card_title');
@@ -140,11 +140,12 @@ get_header('cpl'); ?>
 							}
 							$card_cnt=0;
 							if(have_rows('cards')): ?>
-							<div class="row">
+							<div class="mesh-row">
 							<?php while(have_rows('cards')): the_row();
 								$card_cnt++;
+								$card_color = get_sub_field('color');
 							?>
-								<div class="card columns-4 <?php echo $card_cnt; ?>">
+								<div class="card columns-4 <?php echo $card_cnt . " " . $card_color; ?>">
 									<?php
 									$card_img = get_sub_field('card_image');
 									$card_img_url = $card_img['sizes']['medium_large'];
@@ -152,35 +153,35 @@ get_header('cpl'); ?>
 									$card_title = get_sub_field('card_title');
 									$card_description = get_sub_field('card_blurb');
 									?>
-									
+
 										<img src="<?php echo $card_img_url; ?>" alt="">
 										<div class="text">
-											<h3 class="pf"><?php echo $card_title; ?> <?php echo $card_cnt; ?></h3>
+											<h3 class="pf"><?php echo $card_title; ?></h3>
 											<p class="sf"><?php echo $card_description; ?></p>
 										</div>
 
-										
+
 								</div>
 								<?if ($card_cnt % 3 == 0){
-								echo '</div><div class="row">';
+								echo '</div><div class="mesh-row">';
 							}elseif($card_cnt == $card_num){ ?>
 								<div class='card columns-4 dl'>
 									<div class="text">
-										<h3 class="pf" style="color:blue;"><?php echo $cta_title; ?></h3>
-										<p class="sf"><?php echo $cta_link_text; ?></p>
+										<h3 class="dl-title"><?php echo $cta_title; ?></h3>
+										<p class="dl-link"><?php echo $cta_link_text; ?></p>
 									</div>
 								</div>
 							</div><!--end final row -->
 							<?php } ?>
 
-							
+
 							<?php endwhile; ?>
-							
+
 						<?php endif; ?>
 						<!-- <div class='card columns-4 dl'>
 									<div class="text">
-										<h3 class="pf" style="color:red;"><?php echo $cta_title; ?></h3>
-										<p class="sf"><?php echo $cta_link_text; ?></p>
+										<h3 class="pf" style="color:red;"><//?php echo $cta_title; ?></h3>
+										<p class="sf"><//?php echo $cta_link_text; ?></p>
 									</div>
 								</div>
 							</div> --><!--end final row -->
@@ -189,8 +190,8 @@ get_header('cpl'); ?>
 				</div>
 			<?php	} elseif ($panel_type == 'wysiwyg') { ?>
 				<div class="panel wysiwyg" id="<?php echo $id_add_underscore2; ?>">
-					<div class="container">
-						<div class="row">
+					<div class="mesh-container">
+						<div class="mesh-row">
 							<?php
 							$columns = get_sub_field('text_panel');
 							$col_count = count($columns);
@@ -209,37 +210,45 @@ get_header('cpl'); ?>
 						</div>
 					</div>
 				</div>
-			<?php }elseif($panel_type == 'title_bar') {
-				$tb_text = get_field('title_row_text')
+			<?php }elseif($panel_type == 'title') {
+				$tb_text = get_sub_field('title_row_text');
 				?>
 			<div class="title-bar">
 				<p><?php echo $tb_text; ?></p>
 			</div>
-			<?php }elseif($panel_type == 'image'){ 
+			<?php }elseif($panel_type == 'image'){
 				$image = get_sub_field('image_panel');
 				$image_url = $image['sizes']['background-fullscreen'];
 				?>
-				<div class="image-panel" style="background-image:url('<?php echo $image_url; ?>'); background-size:cover, background-repeat:no-repeat; background-position: center center; height:80vh;"></div>
-			<?php }elseif($panel_type == 'locations'){ 
+				<!-- <div class="image-panel" style="background-image:url('<//?php echo $image_url; ?>'); background-size:cover, background-repeat:no-repeat; background-position: center center; height:80vh;"></div> -->
+				<div class="img-panel">
+					<img class="feature-img" src="<?php echo $image_url; ?>" alt="map">
+					<!-- <div class="map-key">
+						<p>This facility offers <span class="dynamic">both iud + contraceptive implant</span> services</p>
+					</div> -->
+				</div>
+			<?php }elseif($panel_type == 'locations'){
 				$loc_cnt=0;
 				if(have_rows('locations_grid')): ?>
-				<div class="container">
-					<div class="row">
+				<div class="locations panel">
+					<div class="mesh-container">
+					<div class="mesh-row">
 				<?php 	while(have_rows('locations_grid')):the_row();
 				$location_name = get_sub_field('location_name');
 				$location_address = get_sub_field('location_address');
 				$directions = str_replace('<br />', ' ', $location_address);
 				$loc_cnt++;
 				?>
-					<div class="columns-4">
-						<h2><?php echo $loc_cnt; ?>. <?php echo $location_name; ?>
+					<div class="columns-4 location-card">
+						<h2><?php echo $loc_cnt; ?>. <?php echo $location_name; ?></h2>
 						<p><?php echo $location_address; ?></p>
 						<a class="directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=current+location&amp;destination=<?php echo $directions; ?>" target="_blank">Get Directions >></a>
-					</div>	
+					</div>
 				<?php endwhile; ?>
 					</div> <!-- end row -->
-				</div> <!-- end container -->
-			<?php endif; ?>	
+					</div> <!-- end mesh-container -->
+				</div>
+			<?php endif; ?>
 			<!-- https://www.google.com/maps?saddr=My+location&daddr= -->
 
 	<?php  } endwhile; endif; ?>

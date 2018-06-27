@@ -3,12 +3,13 @@
 $primary_color = get_field('primary_color', 'option');
 $secondary_color = get_field('secondary_color', 'option');
 ?>
-<footer id="footer" class="panel site-footer primary" style="background-color:<?php echo $primary_color ?>;">
+<footer id="footer" class="panel site-footer primary">
 
-	<div class="container">
-		<div class="row">
+	<div class="mesh-container">
+		<div class="mesh-row">
          <div id="left-col" class="columns-4">
             <h5 class="footer-title pf"><?php the_field('contact_section_title', 'option'); ?></h5>
+				<p>For provider trainings, or to add your clinic to our listing</p>
             <?php
             $line1 = get_field('address_line_1', 'option');
             $line2 = get_field('address_line_2', 'option');
@@ -45,9 +46,9 @@ $secondary_color = get_field('secondary_color', 'option');
 					endif;
 					?>
 				</div>
+				<p class="byline">Site by <a href="http://meshfresh.com" target="_blank">MESH</a></p>
          </div>
          <div id="right-col" class="columns-6 offset-by-2">
-				<h5 class="form-title pf"><?php the_field('contact_form_title', 'option'); ?></h5>
             <?php
             if(!empty($contact_form)){
                echo do_shortcode($contact_form);
@@ -55,7 +56,6 @@ $secondary_color = get_field('secondary_color', 'option');
             ?>
          </div>
 		</div>
-		<p class="byline pf">Site by <a href="http://meshfresh.com" target="_blank">MESH</a></p>
 	</div>
 
 </footer>

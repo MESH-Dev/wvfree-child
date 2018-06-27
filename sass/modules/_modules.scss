@@ -24,6 +24,9 @@ main#content{
    color: $alt-gray;
    padding: 45vh 0 0 0;
    text-align: center;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
    &.yellow{
       background-color: $yellow;
    }
@@ -122,6 +125,9 @@ main#content{
    position: relative;
    overflow: hidden;
    background-color: $white;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
    &.locations{
       padding-bottom: 26px;
    }

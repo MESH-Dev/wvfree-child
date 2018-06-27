@@ -36,22 +36,23 @@ get_header('cpl'); ?>
 	$bg_img = get_field('background_image');
 	//var_dump($bg_img);
 	$bg_url = $bg_img['sizes']['background-fullscreen'];
+	$wg_color = get_field('panel_background_color');
+
 	//$bg_url = $bg_img['url'];
 
-	//Not In use
-	$primary_color = get_field('primary_color', 'option');
-	$secondary_color = get_field('secondary_color', 'option');
-	$tertiary_color = get_field('tertiary_color', 'options');
+	//color
 
-	if (!empty($bg_url)) { ?>
-		<div class="welcome-gate" id="top">
+	//if (!empty($bg_url)) { ?>
+		<!-- <div class="welcome-gate" id="top">
 			<div class="hero" style="background-image:url('<?php echo $bg_url ?>')"></div>
-			<div class="img-filter" style="background-color:<?php echo $primary_color ?>;"></div>
-	<?php } else{ ?>
-		<div class="welcome-gate" id="top" style="background:<?php echo $primary_color ?>;">
-	<?php }; ?>
+
+			<div class="img-filter" style="background-color:<?php echo $primary_color ?>;"></div> -->
+	<?php //} else{ ?>
+		<div class="welcome-gate <?php if($wg_color != ''){echo $wg_color; } ?>" id="top" style="<?php if($bg_url != ''){ echo 'background-image:url('.$bg_url.')'; } ?>">
+	<?php //}; ?>
 		<div class="mesh-container">
 			<div class="mesh-row">
+
 				<!-- Campaign logo -->
 				<?php
 					$cp_logo = get_field('campaign_logo');
@@ -83,7 +84,7 @@ get_header('cpl'); ?>
 			$panel_name = get_sub_field('panel_id');
 			$id_link_text2 = ucwords($panel_name);
 			$id_text_lower2 = strtolower($panel_name);
-			$id_add_underscore2 = str_replace(' ', '_', $id_text_lower);
+			$id_add_underscore2 = str_replace(' ', '_', $id_text_lower2);
 	?>
 				<?php
 				if ($panel_type == 'intro') { ?>
@@ -111,15 +112,19 @@ get_header('cpl'); ?>
 			} elseif($panel_type == 'cards'){
 				$panel_bg = get_sub_field('panel_background_image');
 				$panel_bg_url = $panel_bg['sizes']['background-fullscreen'];
-				if (!empty($panel_bg_url)) { ?>
-					<div class="panel <?php the_sub_field('panel_type'); ?>" id="<?php echo $id_add_underscore2; ?>">
-						<div class="hero" style="background-image:url('<?php echo $panel_bg_url ?>')"></div>
-						<div class="img-filter" style="background-color:<?php echo $secondary_color ?>"></div>
-				<?php } else{ ?>
-					<div class="panel <?php the_sub_field('panel_type'); ?> bc-grid" id="<?php the_sub_field('panel_id'); ?>">
-				<?php }; ?>
-					<div class="mesh-container">
+				$panel_name_cards = get_sub_field('panel_id');
+				$id_link_text_cards = ucwords($panel_name_cards);
+				$id_text_lower_cards = strtolower($panel_name_cards);
+				$id_add_underscore_cards = str_replace(' ', '_', $id_text_lower_cards);
 
+				//if (!empty($panel_bg_url)) { ?>
+					<!-- <div class="panel <?php the_sub_field('panel_type'); ?>" id="<?php echo $id_add_underscore2; ?>">
+						<div class="hero" style="background-image:url('<?php echo $panel_bg_url ?>')"></div>
+						<div class="img-filter" style="background-color:<?php echo $secondary_color ?>"></div> -->
+				<?php //} else{ ?>
+					<div class="panel <?php $panel_type; ?> bc-grid" id="<?php echo $id_add_underscore_cards;?>" > <!-- style="background-color:<?php echo $secondary_color ?>;" -->
+				<?php //}; ?>
+					<div class="mesh-container">
 							<?php
 							$cards = get_sub_field('cards');
 							$cta_title = get_sub_field('cta_card_title');
@@ -143,9 +148,11 @@ get_header('cpl'); ?>
 							<div class="mesh-row">
 							<?php while(have_rows('cards')): the_row();
 								$card_cnt++;
-								$card_color = get_sub_field('color');
+								$color = get_sub_field('color');
+								
+
 							?>
-								<div class="card columns-4 <?php echo $card_cnt . " " . $card_color; ?>">
+								<div class="card columns-4 <?php echo $color; ?>">
 									<?php
 									$card_img = get_sub_field('card_image');
 									$card_img_url = $card_img['sizes']['medium_large'];
@@ -188,8 +195,13 @@ get_header('cpl'); ?>
 						<!-- </div> -->
 					</div>
 				</div>
-			<?php	} elseif ($panel_type == 'wysiwyg') { ?>
-				<div class="panel wysiwyg" id="<?php echo $id_add_underscore2; ?>">
+			<?php	} elseif ($panel_type == 'wysiwyg') { 
+				$panel_name_text = get_sub_field('panel_id');
+				$id_link_text_text = ucwords($panel_name_text);
+				$id_text_lower_text = strtolower($panel_name_text);
+				$id_add_underscore_text = str_replace(' ', '_', $id_text_lower_text);
+				?>
+				<div class="panel wysiwyg" id="<?php echo $id_add_underscore_text; ?>">
 					<div class="mesh-container">
 						<div class="mesh-row">
 							<?php
@@ -219,16 +231,30 @@ get_header('cpl'); ?>
 			<?php }elseif($panel_type == 'image'){
 				$image = get_sub_field('image_panel');
 				$image_url = $image['sizes']['background-fullscreen'];
+				$panel_name_image = get_sub_field('panel_id');
+				$id_link_text_image = ucwords($panel_name_image);
+				$id_text_lower_image = strtolower($panel_name_image);
+				$id_add_underscore_image = str_replace(' ', '_', $id_text_lower_image);
 				?>
-				<!-- <div class="image-panel" style="background-image:url('<//?php echo $image_url; ?>'); background-size:cover, background-repeat:no-repeat; background-position: center center; height:80vh;"></div> -->
-				<div class="img-panel">
+
+				<div class="panel image" id="<?php echo $id_add_underscore_image; ?>">
+					<!-- <div class="image-panel" style="background-image:url('<?php echo $image_url; ?>'); background-size:cover, background-repeat:no-repeat; background-position: center center; height:80vh;"></div> -->
+	        	<div class="img-panel">
 					<img class="feature-img" src="<?php echo $image_url; ?>" alt="map">
 					<!-- <div class="map-key">
 						<p>This facility offers <span class="dynamic">both iud + contraceptive implant</span> services</p>
 					</div> -->
-				</div>
-			<?php }elseif($panel_type == 'locations'){
-				$loc_cnt=0;
+			
+        </div>
+			<?php }elseif($panel_type == 'locations'){ 
+				$panel_name_loc = get_sub_field('panel_id');
+				//var_dump($panel_name_loc);
+			$id_link_text_loc = ucwords($panel_name_loc);
+			$id_text_lower_loc = strtolower($panel_name_loc);
+			$id_add_underscore_loc = str_replace(' ', '_', $id_text_lower_loc);
+			?>
+			<div class="panel locations" id="<?php echo $id_add_underscore_loc; ?>">
+				<?php $loc_cnt=0;
 				if(have_rows('locations_grid')): ?>
 				<div class="locations panel">
 					<div class="mesh-container">
@@ -246,9 +272,41 @@ get_header('cpl'); ?>
 					</div>
 				<?php endwhile; ?>
 					</div> <!-- end row -->
-					</div> <!-- end mesh-container -->
-				</div>
-			<?php endif; ?>
+				</div> <!-- end mesh-container -->
+			</div>
+			<?php endif; ?>	
+			<?php }elseif($panel_type == 'sponsors'){ 
+				if(have_rows('sponsor_panel')):?>
+				<div class="panel sponsors" id="<?php echo $id_add_underscore2; ?>">
+					<?php while(have_rows('sponsor_panel')):the_row();
+				$sponsor_logo = get_sub_field('sponsor_logo');
+				//var_dump($sponsor_logo);
+				$sponsor_logo_URL = $sponsor_logo['sizes']['large'];
+				$sponsor_logo_alt = $sponsor_logo['alt'];
+				$alt = '';
+				if($sponsor_logo_alt != ''){
+					$alt = 'alt="'.$sponsor_logo_alt.'"';
+				}
+
+				$spoonsor_logo_alt = $sponsor_logo['alt'];
+				$sponsor_link = get_sub_field('sponsor_link');
+				$external = get_sub_field('external');
+				$target='';
+				if($external != ''){
+					$target= 'target="_blank';
+				}	
+				?>
+
+				<?php if ($sponsor_link != ''){ ?>
+				<a href="<?php echo $sponsor_link; ?>" <?php echo $target; ?> >
+				<?php } ?>
+					<img src="<?php echo $sponsor_logo_URL; ?>" <?php echo $alt; ?> >
+				<?php if ($sponsor_link != ''){ ?>
+				</a>
+				<?php } 
+					endwhile; ?>
+					</div>
+					<?php endif;?>
 			<!-- https://www.google.com/maps?saddr=My+location&daddr= -->
 
 	<?php  } endwhile; endif; ?>

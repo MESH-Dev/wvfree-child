@@ -15,7 +15,7 @@ var welcomeAnim = new TimelineMax(),
    footerAnim = new TimelineMax(),
    controller = new ScrollMagic.Controller(),
    welcomeTitle = document.getElementById('welcomeTitle'),
-   welcomeDesc = document.getElementById('welcomeDesc'),
+   // welcomeDesc = document.getElementById('welcomeDesc'),
    scrollLink = document.getElementById('scrollLink'),
    mainPanels = document.getElementsByClassName('panel'),
    navItems =  document.getElementById('main-nav').getElementsByTagName('ul')[0].getElementsByTagName('a'),
@@ -78,10 +78,10 @@ jQuery(document).ready(function($){
 //Landing & Scroll Animations
 
 welcomeAnim.set(welcomeTitle, {css:{transform:"translateY(40px)", opacity:0}})
-   .set(welcomeDesc, {css:{transform:"translateY(30px)", opacity:0}})
+   // .set(welcomeDesc, {css:{transform:"translateY(30px)", opacity:0}})
    .set(scrollLink, {css:{opacity:0}})
    .to(welcomeTitle, 0.5, {css:{transform:"translateY(0px)", opacity:1}, ease: Power3.easeInOut, delay: 0.4})
-   .to(welcomeDesc, 0.5, {css:{transform:"translateY(0px)", opacity:1}, ease: Power2.easeInOut, delay: -0.1})
+   // .to(welcomeDesc, 0.5, {css:{transform:"translateY(0px)", opacity:1}, ease: Power2.easeInOut, delay: -0.1})
    .to(scrollLink, 0.5, {css:{opacity:1}, ease: Power2.easeInOut});
 
 if (introPanels) {

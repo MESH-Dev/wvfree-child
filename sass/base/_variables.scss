@@ -13,7 +13,7 @@ $bp-smaller-than-desktop : "max-width: 1060px" !default;
 $bp-smaller-than-tablet : "max-width: 750px" !default;
 $bp-smaller-than-mobile : "max-width: 480px" !default;
 $bp-smaller-than-phablet   : "max-width: 550px" !default;
-$bp-smaller-than-desktophd : "max-width: 1200px" !default;
+$bp-smaller-than-desktophd : "max-width: 1199px" !default;
 
 // Colors
 $primary_color: #c36256 !default;
@@ -34,6 +34,8 @@ $burnt_red: #D86E73;
 $slate_blue: #868F9E;
 $yellow: #BE9971;
 $peach: #EBB983;
+$titlebar-color: #ECEBE4;
+$pink: #CDB7BE;
 
 //Fonts
 $proxima: "proxima-nova",sans-serif;

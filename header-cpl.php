@@ -98,7 +98,7 @@
 
 	?>
 
-	<style>
+	<!-- <style>
 		.pf,
 		.panel.wysiwyg blockquote,
 		.panel.wysiwyg blockquote p,
@@ -112,9 +112,9 @@
 		.panel.wysiwyg p,
 		.panel.wysiwyg ul,
 		.panel.wysiwyg li{
-			<?php echo $sf_css;?>
+			<//?php echo $sf_css;?>
 		}
-	</style>
+	</style> -->
 
 	<!-- Favicons
 	================================================== -->

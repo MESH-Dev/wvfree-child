@@ -19,7 +19,7 @@ $max-width: 1200px;
 //==================================================================
 //==================================================================
 
-.container{
+.mesh-container{
 	max-width: $max-width;
 	margin:  0 auto;
    @media screen and ($bp-smaller-than-desktophd){
@@ -27,7 +27,7 @@ $max-width: 1200px;
    }
 }
 
-.row {
+.mesh-row {
 	width: 100%;
 	margin: 0 0 0 0;
 	&:after {
@@ -72,7 +72,7 @@ $max-width: 1200px;
 	float: left;
 	padding-right: $pad;
 
-	.row &:last-of-type {
+	.mesh-row &:last-of-type {
 		padding-right: 0;
 	}
 

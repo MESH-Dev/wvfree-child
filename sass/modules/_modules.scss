@@ -18,7 +18,7 @@ main#content{
    color: $alt-gray;
    padding: 45vh 0 0 0;
    text-align: center;
-   .container{
+   .mesh-container{
       -webkit-transform: translateY(-55%);
       -ms-transform: translateY(-55%);
       transform: translateY(-55%);
@@ -52,7 +52,7 @@ main#content{
          margin-bottom: 20px;
          font-size: 36px;
          letter-spacing: 2.25px;
-         //font-family: $primary_font;
+         font-family: $primary_font;
          // font-weight: 300;
          // font-style: italic;
          @media screen and ($bp-smaller-than-mobile){
@@ -85,11 +85,19 @@ main#content{
    background: $primary_color;
 }
 
+.page-template-campaign-landing .panel{
+   margin-bottom: 0;
+   border-radius: 0;
+}
+
 .panel{
    padding: 76px 0;
    position: relative;
    overflow: hidden;
    background-color: $white;
+   &.locations{
+      padding-bottom: 26px;
+   }
    &.cards{
       background-color: transparent;
       &.bc-grid{
@@ -98,115 +106,123 @@ main#content{
       .hero{
          z-index: 0;
       }
-      .container{
+      .mesh-container{
          z-index: 1;
       }
-      .row{
+      .mesh-row{
          z-index: 2;
-         margin-bottom: 20px;
+         margin-bottom: 56px;
          &:last-of-type{
             margin-bottom: 0px;
          }
       }
       .card{
          z-index: 2;
+         .text{
+            h3.dl-title{
 
+            }
+            p.dl-link{
+
+            }
+            p{
+               color: $alt-gray;
+            }
+         }
          &.yellow{
-
+            h3{
+               color: $yellow;
+            }
          }
 
          &.red{
-
+            h3{
+               color: $burnt_red;
+            }
          }
 
          &.blue{
-
+            h3{
+               color: $slate_blue;
+            }
          }
 
          &.purple{
-            
+            h3{
+               color: $purple;
+            }
          }
       }
    }
    &.wysiwyg{
       h1,h2,h3,h4,h5,h6{
-         margin-bottom: 1rem;
+         margin-bottom: 10px;
          a{
             font-weight: inherit;
             text-decoration: underline;
          }
       }
       h1{
-         // font-family: $av-demibold;
-         font-size: 4.8rem;
+         font-size: 48px;
          letter-spacing: 1.5px;
-         color: $primary_color;
-         //font-family: $primary_font;
-         font-weight: 600;
+         color: $yellow;
+         font-family: $primary_font;
+         font-weight: 400;
       }
       h2{
-         // font-family: $av-ultralight;
-         font-size: 4.2rem;
-         letter-spacing: 1.2px;
-         color: $secondary_color;
-         //font-family: $primary_font;
-         font-weight: 200;
+         font-size: 36px;
+         letter-spacing: 1.12px;
+         color: $slate_blue;
+         font-family: $isidora-black;
+         text-transform: uppercase;
       }
       h3{
-         // font-family: $av-regular;
-         font-size: 3.6rem;
-         color: $secondary_color;
-         letter-spacing: 1.03px;
-         //font-family: $primary_font;
-         font-weight: 400;
+         font-size: 28px;
+         color: $pink;
+         letter-spacing: 1.2px;
+         font-family: $isidora-bold;
       }
       h4{
-         // font-family: $av-demibold;
-         font-size: 3.2rem;
-         color: $secondary_color;
-         letter-spacing: 1px;
-         //font-family: $primary_font;
-         font-weight: 600;
+         font-size: 24px;
+         color: $yellow;
+         letter-spacing: 0.75px;
+         font-family: $primary_font;
+         font-weight: 400;
       }
       h5{
-         // font-family: $av-bold;
-         font-size: 2.8rem;
-         color: $primary_color;
-         letter-spacing: 0.88px;
-         //font-family: $primary_font;
-         font-weight: 700;
+         font-size: 21px;
+         letter-spacing: 0.66px;
+         font-family: $isidora-black;
+         text-transform: uppercase;
       }
       h6{
-         // font-family: $av-medium;
-         font-size: 2.4rem;
-         color: $secondary_color;
-         letter-spacing: 0.75px;
-         //font-family: $primary_font;
-         font-weight: 500;
+         font-size: 18px;
+         color: $navy;
+         letter-spacing: 0.66px;
+         font-family: $isidora-black;
+         text-transform: uppercase;
       }
       p, ul, li{
-         //font-family: $secondary_font;
-         font-weight: 400;
-         font-size: 1.4rem;
-         letter-spacing: 0.41px;
-         line-height: 24px;
-         color: $grey;
+         font-family: $isidora-regular;
+         font-size: 16px;
+         letter-spacing: 1px;
+         color: $alt-gray;
       }
       blockquote{
          // font-family: $av-italic;
          letter-spacing: 0.4px;
-         border-left: 1px solid $grey;
+         border-left: 1px solid $alt-gray;
          padding-left: 10px;
          //font-family: $primary_font;
          font-weight: 400;
          font-style: italic;
-         font-size: 2rem;
+         font-size: 20px;
          p{
             // font-family: $av-italic;
             //font-family: $primary_font;
             font-weight: 400;
             font-style: italic;
-            font-size: 2rem;
+            font-size: 20px;
          }
       }
       ul li{
@@ -220,10 +236,12 @@ main#content{
          height: auto;
       }
       a{
-         color: $tertiary_color;
-         font-weight: 700;
+         color: $navy;
+         font-size: 18px;
+         font-family: $primary_font;
+         font-weight: 400;
          transition: opacity 0.2s ease-in-out;
-         text-decoration: underline;
+         text-decoration: none;
          &:hover{
             text-decoration: none;
             opacity: 0.8;
@@ -337,7 +355,6 @@ main#content{
       }
    }
    .text{
-      max-width: 255px;
       margin: 0 auto;
    }
    a{
@@ -353,7 +370,7 @@ main#content{
    }
    h3{
       // font-family: $av-demibold;
-      font-size: 3.2rem;
+      font-size: 32px;
       letter-spacing: 2px;
       font-family: $isidora-black;
       font-weight: 600;
@@ -361,7 +378,7 @@ main#content{
    p{
       font-family: $isidora-regular;
       color: $white;
-      font-size: 1.6rem;
+      font-size: 16px;
       letter-spacing: 1px;
    }
    img{
@@ -372,16 +389,71 @@ main#content{
    }
 }
 
+//Title Bar
 .title-bar{
    background-color: $orange;
    text-align: center;
    padding: 20px 0;
    p{
-      color: $white;
+      color: $titlebar-color;
       font-family: $isidora-black;
       font-size: 36px;
       letter-spacing: 1.12px;
    }
+}
+
+//Image Panel
+.img-panel{
+   position: relative;
+   @media screen and ($bp-smaller-than-tablet){
+      display: none;
+   }
+   .feature-img{
+      width: 100%;
+   }
+   .map-key{
+      position: absolute;
+      bottom: 80px;
+      left: 80px;
+   }
+}
+
+//Locations Panel
+.panel.locations{
+   background-color: $titlebar-color;
+   .location-card{
+      margin-bottom: 50px;
+      h2{
+         font-family: $isidora-black;
+         font-size: 16px;
+         letter-spacing: 1px;
+         color: $slate_blue;
+         margin-bottom: 6px;
+         margin-top: 0;
+      }
+      p{
+         font-family: $isidora-regular;
+         font-size: 16px;
+         letter-spacing: 1px;
+         margin-bottom: 6px;
+      }
+      a{
+         font-family: $primary_font;
+         font-weight: 400;
+         font-size: 14px;
+         letter-spacing: 1px;
+         color: $navy;
+         transition: opacity 0.2s ease-in-out;
+         &:hover{
+            text-decoration: none;
+            opacity: 0.5;
+         }
+      }
+   }
+}
+
+.map-key{
+   background-color: $titlebar-color;
 }
 
 .clearfix{

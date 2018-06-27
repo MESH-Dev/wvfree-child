@@ -2,8 +2,13 @@
 /* Template Name: Campaign Landing Template*/
 get_header('cpl'); ?>
 <header>
+	<?php
+	$logo = get_field('site_logo', 'option');
+	$logo_url = $logo['sizes']['medium'];
+	$favicon_url = $logo['sizes']['small'];
+	?>
 	<a class="logo" href="#top">
-		<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_FilledCircle_PurpleBlueGradient_large_72dpi.png" alt="">
+		<img src="<?php echo $logo_url ?>" alt="">
 	</a>
 	<nav id="main-nav" class="main-navigation">
 		<ul id="menu-main_nav" class="menu">
@@ -118,11 +123,11 @@ get_header('cpl'); ?>
 				$id_add_underscore_cards = str_replace(' ', '_', $id_text_lower_cards);
 
 				//if (!empty($panel_bg_url)) { ?>
-					<!-- <div class="panel <?php the_sub_field('panel_type'); ?>" id="<?php echo $id_add_underscore2; ?>">
-						<div class="hero" style="background-image:url('<?php echo $panel_bg_url ?>')"></div>
-						<div class="img-filter" style="background-color:<?php echo $secondary_color ?>"></div> -->
+					<!-- <div class="panel <//?php the_sub_field('panel_type'); ?>" id="<//?php echo $id_add_underscore2; ?>">
+						<div class="hero" style="background-image:url('<//?php echo $panel_bg_url ?>')"></div>
+						<div class="img-filter" style="background-color:<//?php echo $secondary_color ?>"></div> -->
 				<?php //} else{ ?>
-					<div class="panel <?php $panel_type; ?> bc-grid" id="<?php echo $id_add_underscore_cards;?>" > <!-- style="background-color:<?php echo $secondary_color ?>;" -->
+					<div class="panel <?php echo $panel_type; ?> bc-grid" id="<?php echo $id_add_underscore_cards;?>" > <!-- style="background-color:<?php echo $secondary_color ?>;" -->
 				<?php //}; ?>
 					<div class="mesh-container">
 							<?php
@@ -149,7 +154,7 @@ get_header('cpl'); ?>
 							<?php while(have_rows('cards')): the_row();
 								$card_cnt++;
 								$color = get_sub_field('color');
-								
+
 
 							?>
 								<div class="card columns-4 <?php echo $color; ?>">
@@ -195,7 +200,7 @@ get_header('cpl'); ?>
 						<!-- </div> -->
 					</div>
 				</div>
-			<?php	} elseif ($panel_type == 'wysiwyg') { 
+			<?php	} elseif ($panel_type == 'wysiwyg') {
 				$panel_name_text = get_sub_field('panel_id');
 				$id_link_text_text = ucwords($panel_name_text);
 				$id_text_lower_text = strtolower($panel_name_text);
@@ -239,14 +244,24 @@ get_header('cpl'); ?>
 
 				<div class="panel image" id="<?php echo $id_add_underscore_image; ?>">
 					<!-- <div class="image-panel" style="background-image:url('<?php echo $image_url; ?>'); background-size:cover, background-repeat:no-repeat; background-position: center center; height:80vh;"></div> -->
-	        	<div class="img-panel">
-					<img class="feature-img" src="<?php echo $image_url; ?>" alt="map">
-					<!-- <div class="map-key">
-						<p>This facility offers <span class="dynamic">both iud + contraceptive implant</span> services</p>
-					</div> -->
-			
-        </div>
-			<?php }elseif($panel_type == 'locations'){ 
+		        	<div class="img-panel">
+						<img class="feature-img" src="<?php echo $image_url; ?>" alt="map">
+					</div>
+					<div class="map-key">
+						<div class="key-row">
+							<?php
+							$folder = get_stylesheet_directory_uri();
+							?>
+							<img class="key-marker" src="<?php echo $folder.'/img/marker1.png' ?>" alt="marker">
+							<p class="key-text">This facility offers <span class="blue">both iud + contraceptive implant</span> services <img class="key-icon" src="<?php echo $folder.'/img/iud_blue.png' ?>" alt="iud icon"> <img class="key-icon" src="<?php echo $folder.'/img/implant_blue.png' ?>" alt="implant icon"></p>
+						</div>
+						<div class="key-row">
+							<img class="key-marker" src="<?php echo $folder.'/img/marker2.png' ?>" alt="marker">
+							<p class="key-text">This facility offers <span class="purple">only contraceptive implant</span> services <img class="key-icon" src="<?php echo $folder.'/img/implant_purple.png' ?>" alt="iud icon"></p>
+						</div>
+					</div>
+	        </div>
+			<?php }elseif($panel_type == 'locations'){
 				$panel_name_loc = get_sub_field('panel_id');
 				//var_dump($panel_name_loc);
 			$id_link_text_loc = ucwords($panel_name_loc);
@@ -256,7 +271,6 @@ get_header('cpl'); ?>
 			<div class="panel locations" id="<?php echo $id_add_underscore_loc; ?>">
 				<?php $loc_cnt=0;
 				if(have_rows('locations_grid')): ?>
-				<div class="locations panel">
 					<div class="mesh-container">
 					<div class="mesh-row">
 				<?php 	while(have_rows('locations_grid')):the_row();
@@ -274,8 +288,8 @@ get_header('cpl'); ?>
 					</div> <!-- end row -->
 				</div> <!-- end mesh-container -->
 			</div>
-			<?php endif; ?>	
-			<?php }elseif($panel_type == 'sponsors'){ 
+			<?php endif; ?>
+			<?php }elseif($panel_type == 'sponsors'){
 				if(have_rows('sponsor_panel')):?>
 				<div class="panel sponsors" id="<?php echo $id_add_underscore2; ?>">
 					<?php while(have_rows('sponsor_panel')):the_row();
@@ -294,7 +308,7 @@ get_header('cpl'); ?>
 				$target='';
 				if($external != ''){
 					$target= 'target="_blank';
-				}	
+				}
 				?>
 
 				<?php if ($sponsor_link != ''){ ?>
@@ -303,14 +317,39 @@ get_header('cpl'); ?>
 					<img src="<?php echo $sponsor_logo_URL; ?>" <?php echo $alt; ?> >
 				<?php if ($sponsor_link != ''){ ?>
 				</a>
-				<?php } 
+				<?php }
 					endwhile; ?>
 					</div>
 					<?php endif;?>
 			<!-- https://www.google.com/maps?saddr=My+location&daddr= -->
 
 	<?php  } endwhile; endif; ?>
-
+<div class="partner panel">
+	<div class="mesh-container">
+		<div class="mesh-row">
+			<div class="columns-3">
+				<div class="logo-wrap">
+					<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_PrimaryLogo_Black.png" alt="">
+				</div>
+			</div>
+			<div class="columns-3">
+				<div class="logo-wrap">
+					<img src="http://localhost:8888/wvfree/wp-content/uploads/WV-BehavioralHealthcareProvidersAssoc_Black.png" alt="">
+				</div>
+			</div>
+			<div class="columns-3">
+				<div class="logo-wrap">
+					<img src="http://localhost:8888/wvfree/wp-content/uploads/WV_Perinatal_Logo_Black.png" alt="">
+				</div>
+			</div>
+			<div class="columns-3">
+				<div class="logo-wrap">
+					<img src="http://localhost:8888/wvfree/wp-content/uploads/wvfree-drannelbanfieldmd-partnerlogo_black.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </main><!-- End of Content -->
 
 <?php get_footer('cpl'); ?>

@@ -135,7 +135,7 @@ main#content{
       padding: 0;
    }
    &.partner{
-      background-color: $peach;
+      //background-color: $peach;
       .mesh-row{
          @include display-flex;
          @include align-items(center);
@@ -506,6 +506,15 @@ main#content{
    .feature-img{
       width: 100%;
    }
+}
+
+//Image Only Panel
+.full{
+   height:100vh;
+}
+
+.narrow{
+   height:400px;
 }
 
 //Locations Panel

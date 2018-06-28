@@ -47,7 +47,7 @@ get_header('cpl'); ?>
 	$wg_statement = get_field('statement');
 	$wg_blurb = get_field('main_blurb');
 	 ?>
-		<div class="welcome-gate id="top" style="<?php if($bg_url != ''){ echo 'background-image:url('.$bg_url.');'; } ?> <?php if($wg_color != ''){echo 'background-color: '.$wg_color .';'; } ?>"">
+		<div class="welcome-gate" id="top" style="<?php if($bg_url != ''){ echo 'background-image:url('.$bg_url.');'; } ?> <?php if($wg_color != ''){echo 'background-color: '.$wg_color .';'; } ?>">
 	
 		<div class="mesh-container">
 			<div class="mesh-row">
@@ -317,7 +317,7 @@ get_header('cpl'); ?>
 				<?php } ?>
 				
 					<div class="columns-4 location-card <?php echo $loc_color; ?>">
-						<h2><?php echo $loc_cnt; ?>. <?php echo $loc_cnt %3 ?> <?php echo $location_name; ?></h2>
+						<h2><?php echo $loc_cnt; ?>. <?php echo $location_name; ?></h2>
 						<p><?php echo $location_address; ?><br />
 						<?php echo $location_phone; ?></p>
 						<a class="directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=current+location&amp;destination=<?php echo $directions; ?>" target="_blank">Get Directions >></a>
@@ -356,12 +356,12 @@ get_header('cpl'); ?>
 				</div> <!-- end mesh-container -->
 			</div>
 			<?php endif; ?>	
-			<?php }elseif($panel_type == 'sponsors'){ 
+			<?php }elseif($panel_type == 'partners'){ 
 				$tb_text_sponsor = get_sub_field('title_row_text');
 				$panel_bg_color_partners = get_sub_field('panel_background_color');
 				if(have_rows('sponsor_panel')):
 					?>
-				<div class="panel sponsors" id="<?php echo $id_add_underscore2; ?>" <?php if($panel_bg_color_partners != ""){ echo 'style="background-color:'.$panel_bg_color_partners.';"'; }?>>
+				<div class="panel partner" id="<?php echo $id_add_underscore2; ?>" <?php if($panel_bg_color_partners != ""){ echo 'style="background-color:'.$panel_bg_color_partners.';"'; }?>>
 					<div class="title-bar">
 						<p><?php echo $tb_text_sponsor; ?></p>
 					</div>
@@ -389,51 +389,34 @@ get_header('cpl'); ?>
 
 				?>
 
-				<?php if ($sponsor_link != ''){ ?>
-				<a href="<?php echo $sponsor_link; ?>" <?php echo $target; ?> >
-				<?php } ?>
+				
+				
 				<div class="columns-3">
 					<div class="logo-wrap">
-						<img src="<?php echo $sponsor_logo_URL; ?>" <?php echo $alt; ?> >
+						<?php if ($sponsor_link != ''){ ?>
+						<a href="<?php echo $sponsor_link; ?>" <?php echo $target; ?> >
+						<?php } ?>
+							<img src="<?php echo $sponsor_logo_URL; ?>" <?php echo $alt; ?> >
+						<?php if ($sponsor_link != ''){ ?>
+						</a>
+						<?php } ?>
 					</div>
 				</div>
-				<?php if ($sponsor_link != ''){ ?>
-				</a>
-				<?php }
-					endwhile; ?>
+				
+					<?php endwhile; ?>
 					</div></div></div>
 					<?php endif;?>
 			<!-- https://www.google.com/maps?saddr=My+location&daddr= -->
-			<?php }elseif($panel_type == 'image-only'){ ?>
-			<div class="panel image-only" id="<?php echo $id_add_underscore_io; ?>">
+			<?php }elseif($panel_type == 'image-only'){ 
+				$image_o = get_sub_field('image_panel');
+				$image_o_url = $image_o['sizes']['background-fullscreen'];
+				$image_o_alt = $image_o['alt'];
+				$size = get_sub_field('image_panel_size');
+				?>
+			<div class="panel image-only <?php echo $size; ?>" style="background-image:url('<?php echo $image_o_url; ?>');">
+				<span class="sr-only"><?php echo $image_o_alt; ?>
 			</div>
 	<?php  } endwhile; endif; ?>
-<div class="partner panel">
-	<div class="mesh-container">
-		<div class="mesh-row">
-			<div class="columns-3">
-				<div class="logo-wrap">
-					<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_PrimaryLogo_Black.png" alt="">
-				</div>
-			</div>
-			<div class="columns-3">
-				<div class="logo-wrap">
-					<img src="http://localhost:8888/wvfree/wp-content/uploads/WV-BehavioralHealthcareProvidersAssoc_Black.png" alt="">
-				</div>
-			</div>
-			<div class="columns-3">
-				<div class="logo-wrap">
-					<img src="http://localhost:8888/wvfree/wp-content/uploads/WV_Perinatal_Logo_Black.png" alt="">
-				</div>
-			</div>
-			<div class="columns-3">
-				<div class="logo-wrap">
-					<img src="http://localhost:8888/wvfree/wp-content/uploads/wvfree-drannelbanfieldmd-partnerlogo_black.png" alt="">
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 </main><!-- End of Content -->
 
 <?php get_footer('cpl'); ?>

@@ -486,11 +486,12 @@ main#content{
 
 //Title Bar
 .title-bar{
-   background-color: $orange;
+   //background-color: $orange;
    text-align: center;
    padding: 20px 0;
    p{
-      color: $titlebar-color;
+      //color: $titlebar-color;
+      text-transform:uppercase;
       font-family: $isidora-black;
       font-size: 36px;
       letter-spacing: 1.12px;

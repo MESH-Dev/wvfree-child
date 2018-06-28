@@ -84,7 +84,8 @@ get_header('cpl'); ?>
 
 	<?php
 	$title_row_bg = get_field('title_row_background_color');
-	$title_bar_font = get_field('title_row_font_color');
+	$title_bar_font = get_field('title_bar_text_color');
+	var_dump($title_bar_font);
 	if(have_rows('panels')):
 		while(have_rows('panels')) : the_row();
 			$panel_type = get_sub_field('panel_type');
@@ -226,8 +227,8 @@ get_header('cpl'); ?>
 				$tb_text_wys = get_sub_field('title_row_text');
 				?>
 				<div class="panel wysiwyg" id="<?php echo $id_add_underscore_text; ?>">
-					<div class="title-bar">
-						<p><?php echo $tb_text_wys; ?></p>
+					<div class="title-bar" <?php if($title_row_bg != ''){ echo 'style="background-color:'.$title_row_bg.';"'; }?>>
+						<p <?php if($title_bar_font != ''){echo 'style="color:'.$title_bar_font.';"';} ?>><?php echo $tb_text_wys; ?></p>
 					</div>
 					<div class="mesh-container">
 						<div class="mesh-row">
@@ -274,8 +275,8 @@ get_header('cpl'); ?>
 				?>
 
 				<div class="panel <?php echo $panel_type; ?>" id="<?php echo $id_add_underscore_image; ?>" <?php if($panel_bg_color_image != ""){ echo 'style="background-color:'.$panel_bg_color_image.';"'; }?>>
-		        	<div class="title-bar">
-						<p><?php echo $tb_text_map; ?></p>
+		        	<div class="title-bar" <?php if($title_row_bg != ''){ echo 'style="background-color:'.$title_row_bg.';"'; }?>>
+						<p <?php if($title_bar_font != ''){echo 'style="color:'.$title_bar_font.';"';} ?>><?php echo $tb_text_map; ?></p>
 					</div>
 		        	<div class="img-panel">
 						<img class="feature-img" src="<?php echo $image_url; ?>" alt="map">
@@ -362,8 +363,8 @@ get_header('cpl'); ?>
 				if(have_rows('sponsor_panel')):
 					?>
 				<div class="panel partner" id="<?php echo $id_add_underscore2; ?>" <?php if($panel_bg_color_partners != ""){ echo 'style="background-color:'.$panel_bg_color_partners.';"'; }?>>
-					<div class="title-bar">
-						<p><?php echo $tb_text_sponsor; ?></p>
+					<div class="title-bar" <?php if($title_row_bg != ''){ echo 'style="background-color:'.$title_row_bg.';"'; }?>>
+						<p <?php if($title_bar_font != ''){echo 'style="color:'.$title_bar_font.';"';} ?>><?php echo $tb_text_sponsor; ?></p>
 					</div>
 					<div class="mesh-container">
 						<div class="mesh-row">

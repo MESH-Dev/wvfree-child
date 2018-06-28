@@ -1907,63 +1907,62 @@ main#content .panel .mesh-container {
 
 /* line 488, sass/modules/_modules.scss */
 .title-bar {
-  background-color: #D5BB38;
   text-align: center;
   padding: 20px 0;
 }
 /* line 492, sass/modules/_modules.scss */
 .title-bar p {
-  color: #ECEBE4;
+  text-transform: uppercase;
   font-family: "Isidora Sans W00 Black";
   font-size: 36px;
   letter-spacing: 1.12px;
 }
 
-/* line 501, sass/modules/_modules.scss */
+/* line 502, sass/modules/_modules.scss */
 .img-panel {
   position: relative;
 }
 @media screen and (max-width: 750px) {
-  /* line 501, sass/modules/_modules.scss */
+  /* line 502, sass/modules/_modules.scss */
   .img-panel {
     display: none;
   }
 }
-/* line 506, sass/modules/_modules.scss */
+/* line 507, sass/modules/_modules.scss */
 .img-panel .feature-img {
   width: 100%;
 }
 
-/* line 512, sass/modules/_modules.scss */
+/* line 513, sass/modules/_modules.scss */
 .full {
   height: 100vh;
 }
 
-/* line 516, sass/modules/_modules.scss */
+/* line 517, sass/modules/_modules.scss */
 .narrow {
   height: 400px;
 }
 
-/* line 521, sass/modules/_modules.scss */
+/* line 522, sass/modules/_modules.scss */
 .panel.locations {
   background-color: #ECEBE4;
 }
 @media screen and (min-width: 1200px) {
-  /* line 523, sass/modules/_modules.scss */
+  /* line 524, sass/modules/_modules.scss */
   .panel.locations .mesh-container {
     max-width: 920px;
   }
 }
 
-/* line 529, sass/modules/_modules.scss */
+/* line 530, sass/modules/_modules.scss */
 .location-card {
   margin-bottom: 50px;
 }
-/* line 532, sass/modules/_modules.scss */
+/* line 533, sass/modules/_modules.scss */
 .location-card.purple h2 {
   color: #BE748a;
 }
-/* line 536, sass/modules/_modules.scss */
+/* line 537, sass/modules/_modules.scss */
 .location-card h2 {
   font-family: "Isidora Sans W00 Black";
   font-size: 16px;
@@ -1972,14 +1971,14 @@ main#content .panel .mesh-container {
   margin-bottom: 6px;
   margin-top: 0;
 }
-/* line 544, sass/modules/_modules.scss */
+/* line 545, sass/modules/_modules.scss */
 .location-card p {
   font-family: "Isidora Sans W00 Regular";
   font-size: 16px;
   letter-spacing: 1px;
   margin-bottom: 6px;
 }
-/* line 550, sass/modules/_modules.scss */
+/* line 551, sass/modules/_modules.scss */
 .location-card a {
   font-family: "lust", serif;
   font-weight: 400;
@@ -1988,13 +1987,13 @@ main#content .panel .mesh-container {
   color: #4C4B6B;
   transition: opacity 0.2s ease-in-out;
 }
-/* line 557, sass/modules/_modules.scss */
+/* line 558, sass/modules/_modules.scss */
 .location-card a:hover {
   text-decoration: none;
   opacity: 0.5;
 }
 
-/* line 564, sass/modules/_modules.scss */
+/* line 565, sass/modules/_modules.scss */
 .map-key {
   background-color: #ECEBE4;
   padding: 14px;
@@ -2003,7 +2002,7 @@ main#content .panel .mesh-container {
   left: 76px;
 }
 @media screen and (max-width: 750px) {
-  /* line 564, sass/modules/_modules.scss */
+  /* line 565, sass/modules/_modules.scss */
   .map-key {
     position: relative;
     bottom: auto;
@@ -2013,31 +2012,31 @@ main#content .panel .mesh-container {
   }
 }
 @media screen and (max-width: 550px) {
-  /* line 564, sass/modules/_modules.scss */
+  /* line 565, sass/modules/_modules.scss */
   .map-key {
     padding: 40px 20px;
   }
 }
-/* line 580, sass/modules/_modules.scss */
+/* line 581, sass/modules/_modules.scss */
 .map-key .key-row {
   margin-bottom: 10px;
   vertical-align: top;
 }
-/* line 583, sass/modules/_modules.scss */
+/* line 584, sass/modules/_modules.scss */
 .map-key .key-row:last-of-type {
   margin-bottom: 0;
 }
-/* line 587, sass/modules/_modules.scss */
+/* line 588, sass/modules/_modules.scss */
 .map-key .key-marker {
   display: inline-block;
 }
 @media screen and (max-width: 750px) {
-  /* line 587, sass/modules/_modules.scss */
+  /* line 588, sass/modules/_modules.scss */
   .map-key .key-marker {
     display: none;
   }
 }
-/* line 593, sass/modules/_modules.scss */
+/* line 594, sass/modules/_modules.scss */
 .map-key .key-text {
   display: inline-block;
   font-family: "Isidora Sans W00 Regular";
@@ -2047,29 +2046,29 @@ main#content .panel .mesh-container {
   max-width: 240px;
 }
 @media screen and (max-width: 750px) {
-  /* line 593, sass/modules/_modules.scss */
+  /* line 594, sass/modules/_modules.scss */
   .map-key .key-text {
     max-width: none;
     font-size: 16px;
   }
 }
-/* line 604, sass/modules/_modules.scss */
+/* line 605, sass/modules/_modules.scss */
 .map-key .key-text .blue {
   color: #868F9E;
   font-family: "Isidora Sans W00 Black";
 }
-/* line 608, sass/modules/_modules.scss */
+/* line 609, sass/modules/_modules.scss */
 .map-key .key-text .purple {
   color: #BE748a;
   font-family: "Isidora Sans W00 Black";
 }
-/* line 612, sass/modules/_modules.scss */
+/* line 613, sass/modules/_modules.scss */
 .map-key .key-text img {
   display: inline;
   height: 16px;
   width: auto;
 }
-/* line 618, sass/modules/_modules.scss */
+/* line 619, sass/modules/_modules.scss */
 .map-key img.key-marker {
   width: 26px;
   height: auto;
@@ -2077,7 +2076,7 @@ main#content .panel .mesh-container {
   vertical-align: top;
 }
 
-/* line 626, sass/modules/_modules.scss */
+/* line 627, sass/modules/_modules.scss */
 .clearfix {
   clear: both;
 }

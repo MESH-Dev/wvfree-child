@@ -85,7 +85,7 @@ get_header('cpl'); ?>
 	<?php
 	$title_row_bg = get_field('title_row_background_color');
 	$title_bar_font = get_field('title_bar_text_color');
-	var_dump($title_bar_font);
+	//var_dump($title_bar_font);
 	if(have_rows('panels')):
 		while(have_rows('panels')) : the_row();
 			$panel_type = get_sub_field('panel_type');

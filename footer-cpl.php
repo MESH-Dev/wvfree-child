@@ -2,6 +2,7 @@
 <?php
 $primary_color = get_field('primary_color', 'option');
 $secondary_color = get_field('secondary_color', 'option');
+$contact_section_statement = get_field('contact_section_statement', 'option');
 ?>
 <footer id="footer" class="panel site-footer primary">
 
@@ -9,7 +10,7 @@ $secondary_color = get_field('secondary_color', 'option');
 		<div class="mesh-row">
          <div id="left-col" class="columns-4">
             <h5 class="footer-title pf"><?php the_field('contact_section_title', 'option'); ?></h5>
-				<p>For provider trainings, or to add your clinic to our listing</p>
+				<p><?php echo $contact_section_statement; ?></p>
             <?php
             $line1 = get_field('address_line_1', 'option');
             $line2 = get_field('address_line_2', 'option');

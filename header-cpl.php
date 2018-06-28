@@ -136,9 +136,9 @@
 	<?php the_field('bing_sitemap_verification', 'option'); ?>
 
 	<?php
-		$primary_color = get_field('primary_color', 'option');
-		$secondary_color = get_field('secondary_color', 'option');
-		$tertiary_color = get_field('tertiary_color', 'options');
+		// $primary_color = get_field('primary_color', 'option');
+		// $secondary_color = get_field('secondary_color', 'option');
+		// $tertiary_color = get_field('tertiary_color', 'options');
 
 	?>
 
@@ -170,15 +170,4 @@
 	<?php
 	$primary_color = get_field('primary_color', 'option');
 	?>
-	<header>
-			<a class="logo" href="#top">
-				<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_FilledCircle_PurpleBlueGradient_large_72dpi.png" alt="">
-			</a>
-			<nav id="main-nav" class="main-navigation">
-				<ul id="menu-main_nav" class="menu">
-					<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#panel" class="">Know Your Options</a></li>
-					<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#footer" class="">Second Heading</a></li>
-				</ul>
-				<a id="mobileMenuTrigger">Menu</a>
-			</nav>
-		</header>
+	

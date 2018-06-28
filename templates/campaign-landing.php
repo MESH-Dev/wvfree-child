@@ -1,10 +1,17 @@
 <?php
 /* Template Name: Campaign Landing Template*/
 get_header('cpl'); ?>
-<header>
-	<a class="logo" href="#top">
-		<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_FilledCircle_PurpleBlueGradient_large_72dpi.png" alt="">
-	</a>
+
+<?php $nav_background = get_field('navigation_background_color'); ?>
+<header style="background-color:<?php echo $nav_background; ?>">
+		<?php
+		$logo = get_field('site_logo');
+		$logo_url = $logo['sizes']['medium'];
+		
+		?>
+		<a class="logo" href="#top">
+			<img src="<?php echo $logo_url ?>" alt="">
+		</a>
 	<nav id="main-nav" class="main-navigation">
 		<ul id="menu-main_nav" class="menu">
 			<?php
@@ -37,19 +44,11 @@ get_header('cpl'); ?>
 	//var_dump($bg_img);
 	$bg_url = $bg_img['sizes']['background-fullscreen'];
 	$wg_color = get_field('panel_background_color');
-
-	//$bg_url = $bg_img['url'];
-
-	//color
-
-	//if (!empty($bg_url)) { ?>
-		<!-- <div class="welcome-gate" id="top">
-			<div class="hero" style="background-image:url('<?php echo $bg_url ?>')"></div>
-
-			<div class="img-filter" style="background-color:<?php echo $primary_color ?>;"></div> -->
-	<?php //} else{ ?>
-		<div class="welcome-gate <?php if($wg_color != ''){echo $wg_color; } ?>" id="top" style="<?php if($bg_url != ''){ echo 'background-image:url('.$bg_url.')'; } ?>">
-	<?php //}; ?>
+	$wg_statement = get_field('statement');
+	$wg_blurb = get_field('main_blurb');
+	 ?>
+		<div class="welcome-gate id="top" style="<?php if($bg_url != ''){ echo 'background-image:url('.$bg_url.');'; } ?> <?php if($wg_color != ''){echo 'background-color: '.$wg_color .';'; } ?>"">
+	
 		<div class="mesh-container">
 			<div class="mesh-row">
 
@@ -57,14 +56,20 @@ get_header('cpl'); ?>
 				<?php
 					$cp_logo = get_field('campaign_logo');
 					$cp_logo_url = $cp_logo['sizes']['large'];
+					if($cp_logo != ''){
 				?>
+
 				<img class="feature-image" src="<?php echo $cp_logo_url; ?>">
+				<?php } ?>
+
+				<?php if ($wg_statement != '') { ?>
 				<div class="sign sf">
-					<h1 id="welcomeTitle" class="pf"><?php the_field('statement'); ?></h1>
-					<!-- <//?php if (get_field('main_blurb') != '') { ?>
-						<p id="welcomeDesc" class="sf"><//?php the_field('main_blurb'); ?></p>
-					<//?php } ?> -->
+					<h1 id="welcomeTitle" class="pf"><?php echo $wg_statement; ?></h1>
+					<?php if($wg_blurb != ''){ ?>
+					<h2><?php echo $wg_blurb; ?><h2>
+					<?php } ?>
 				</div>
+				<?php } ?>
 			</div>
 		</div>
 		<a id="scrollLink">
@@ -78,6 +83,8 @@ get_header('cpl'); ?>
 
 
 	<?php
+	$title_row_bg = get_field('title_row_background_color');
+	$title_bar_font = get_field('title_row_font_color');
 	if(have_rows('panels')):
 		while(have_rows('panels')) : the_row();
 			$panel_type = get_sub_field('panel_type');
@@ -112,22 +119,26 @@ get_header('cpl'); ?>
 			} elseif($panel_type == 'cards'){
 				$panel_bg = get_sub_field('panel_background_image');
 				$panel_bg_url = $panel_bg['sizes']['background-fullscreen'];
+				$panel_bg_color_cards = get_sub_field('panel_background_color');
 				$panel_name_cards = get_sub_field('panel_id');
 				$id_link_text_cards = ucwords($panel_name_cards);
 				$id_text_lower_cards = strtolower($panel_name_cards);
 				$id_add_underscore_cards = str_replace(' ', '_', $id_text_lower_cards);
+				$tb_text_cards = get_sub_field('title_row_text');
 
-				//if (!empty($panel_bg_url)) { ?>
-					<!-- <div class="panel <?php the_sub_field('panel_type'); ?>" id="<?php echo $id_add_underscore2; ?>">
-						<div class="hero" style="background-image:url('<?php echo $panel_bg_url ?>')"></div>
-						<div class="img-filter" style="background-color:<?php echo $secondary_color ?>"></div> -->
-				<?php //} else{ ?>
-					<div class="panel <?php $panel_type; ?> bc-grid" id="<?php echo $id_add_underscore_cards;?>" > <!-- style="background-color:<?php echo $secondary_color ?>;" -->
-				<?php //}; ?>
+			 ?>
+					
+				 <div class="panel <?php echo $panel_type; ?> bc-grid" id="<?php echo $id_add_underscore_cards;?>" <?php if($panel_bg_color_cards != ''){ echo 'style="background-color:'. $panel_bg_color_cards .';"';}?>> <!-- style="background-color:<?php echo $secondary_color ?>;" -->
+					<?php if ($tb_text_cards != ''){?>
+						<div class="title-bar" <?php if($title_row_bg != ''){ echo 'style="background-color:'.$title_row_bg.';"'; }?>>
+							<p <?php if($title_bar_font != ''){echo 'style="color:'.$title_bar_font.';"';} ?> ><?php echo $tb_text_cards; ?></p>
+						</div>
+					<?php } ?>
 					<div class="mesh-container">
 							<?php
 							$cards = get_sub_field('cards');
 							$cta_title = get_sub_field('cta_card_title');
+
 							$cta_link_text = get_sub_field('cta_card_link_text');
 							$cta_card_link = get_sub_field('cta_card_link');
 							$cta_external = get_sub_field('external');
@@ -148,25 +159,36 @@ get_header('cpl'); ?>
 							<div class="mesh-row">
 							<?php while(have_rows('cards')): the_row();
 								$card_cnt++;
-								$color = get_sub_field('color');
+								//$color = get_sub_field('color');
 								
 
 							?>
-								<div class="card columns-4 <?php echo $color; ?>">
-									<?php
-									$card_img = get_sub_field('card_image');
-									$card_img_url = $card_img['sizes']['medium_large'];
-									$card_link = get_sub_field('card_link');
-									$card_title = get_sub_field('card_title');
-									$card_description = get_sub_field('card_blurb');
-									?>
+							<?php
+								$card_img = get_sub_field('card_image');
+								$card_img_url = $card_img['sizes']['medium_large'];
+								$card_link = get_sub_field('card_link');
+								$card_title = get_sub_field('card_title');
+								$card_title_color = get_sub_field('card_title_color');
+								$card_description = get_sub_field('card_blurb');
+								$external_link=get_sub_field('external');
 
+								$ex_target = '';
+								if($external_link == true){
+									$ex_target='target="_blank"';
+								}
+							?>
+							 <?php if ($card_link != ''){ ?>
+							 	<a href="<?php echo $card_link; ?>" <?php echo $ex_target; ?>>
+					 		<?php } ?>
+						 			<div class="card columns-4">
 										<img src="<?php echo $card_img_url; ?>" alt="">
 										<div class="text">
-											<h3 class="pf"><?php echo $card_title; ?></h3>
+											<h3 class="pf" <?php if($card_title_color !=""){ echo 'style="color:'.$card_title_color.';"'; }?>><?php echo $card_title; ?></h3>
 											<p class="sf"><?php echo $card_description; ?></p>
 										</div>
-
+								<?php if ($card_link != ''){ ?>
+							 	</a>
+					 		<?php } ?>
 
 								</div>
 								<?if ($card_cnt % 3 == 0){
@@ -200,8 +222,12 @@ get_header('cpl'); ?>
 				$id_link_text_text = ucwords($panel_name_text);
 				$id_text_lower_text = strtolower($panel_name_text);
 				$id_add_underscore_text = str_replace(' ', '_', $id_text_lower_text);
+				$tb_text_wys = get_sub_field('title_row_text');
 				?>
 				<div class="panel wysiwyg" id="<?php echo $id_add_underscore_text; ?>">
+					<div class="title-bar">
+						<p><?php echo $tb_text_wys; ?></p>
+					</div>
 					<div class="mesh-container">
 						<div class="mesh-row">
 							<?php
@@ -223,29 +249,74 @@ get_header('cpl'); ?>
 					</div>
 				</div>
 			<?php }elseif($panel_type == 'title') {
-				$tb_text = get_sub_field('title_row_text');
+				$tb_text_tr = get_sub_field('title_row_text');
+				$panel_name_title = get_sub_field('panel_id');
+				$id_link_text_title = ucwords($panel_name_title);
+				$id_text_lower_title = strtolower($id_link_text_title);
+				$id_add_underscore_title = str_replace(' ', '_', $id_text_lower_title);
+				$panel_bg_color = get_field('panel_background_color');
 				?>
-			<div class="title-bar">
-				<p><?php echo $tb_text; ?></p>
-			</div>
+<!-- 				<div class="panel title" id="<?php echo $id_add_underscore_title; ?>" <?php if($panel_bg_color != ""){ echo 'style="background-color:'.$panel_bg_color.';"'; }?> >
+ -->				<div class="title-bar" id="<?php echo $id_add_underscore_title; ?>" <?php if($title_row_bg != ""){ echo 'style="background-color:'.$title_row_bg.';"'; }?>>
+						<p <?php if($title_bar_font != ''){echo 'style="color:'.$title_bar_font.';"';} ?>> <?php echo $tb_text_tr; ?></p>
+					</div>
+				<!-- </div> -->
 			<?php }elseif($panel_type == 'image'){
 				$image = get_sub_field('image_panel');
 				$image_url = $image['sizes']['background-fullscreen'];
 				$panel_name_image = get_sub_field('panel_id');
+				$panel_bg_color_image = get_sub_field('panel_background_color');
 				$id_link_text_image = ucwords($panel_name_image);
 				$id_text_lower_image = strtolower($panel_name_image);
 				$id_add_underscore_image = str_replace(' ', '_', $id_text_lower_image);
+				$tb_text_map = get_sub_field('title_row_text');
 				?>
 
-				<div class="panel image" id="<?php echo $id_add_underscore_image; ?>">
-					<!-- <div class="image-panel" style="background-image:url('<?php echo $image_url; ?>'); background-size:cover, background-repeat:no-repeat; background-position: center center; height:80vh;"></div> -->
-	        	<div class="img-panel">
-					<img class="feature-img" src="<?php echo $image_url; ?>" alt="map">
-					<!-- <div class="map-key">
-						<p>This facility offers <span class="dynamic">both iud + contraceptive implant</span> services</p>
-					</div> -->
-			
-        </div>
+				<div class="panel <?php echo $panel_type; ?>" id="<?php echo $id_add_underscore_image; ?>" <?php if($panel_bg_color_image != ""){ echo 'style="background-color:'.$panel_bg_color_image.';"'; }?>>
+		        	<div class="title-bar">
+						<p><?php echo $tb_text_map; ?></p>
+					</div>
+		        	<div class="img-panel">
+						<img class="feature-img" src="<?php echo $image_url; ?>" alt="map">
+						<!-- <div class="map-key">
+							<p>This facility offers <span class="dynamic">both iud + contraceptive implant</span> services</p>
+						</div> -->
+				
+	        		</div>
+	        		
+				<?php $loc_cnt=0;
+				if(have_rows('locations_grid')): ?>
+					<div class="mesh-container">
+					<div class="mesh-row">
+				<?php 	while(have_rows('locations_grid')):the_row();
+				$location_name = get_sub_field('location_name');
+				$location_address = get_sub_field('location_address');
+				$location_phone = get_sub_field('location_phone');
+				$directions = str_replace('<br />', ' ', $location_address);
+				$contraceptive = get_sub_field('only_contraceptive');
+
+				$loc_color = '';
+				if($contraceptive == true){
+					$loc_color = 'purple';
+				}
+
+				$loc_cnt++;
+				if($loc_cnt %3 == 1){ ?>
+				</div><div class="mesh-row">
+				<?php } ?>
+				
+					<div class="columns-4 location-card <?php echo $loc_color; ?>">
+						<h2><?php echo $loc_cnt; ?>. <?php echo $loc_cnt %3 ?> <?php echo $location_name; ?></h2>
+						<p><?php echo $location_address; ?><br />
+						<?php echo $location_phone; ?></p>
+						<a class="directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=current+location&amp;destination=<?php echo $directions; ?>" target="_blank">Get Directions >></a>
+					</div>
+				<?php endwhile; ?>
+					</div> <!-- end row -->
+				</div> <!-- end mesh-container -->
+			</div>
+			<?php endif; ?>	
+        		<!-- </div> -->
 			<?php }elseif($panel_type == 'locations'){ 
 				$panel_name_loc = get_sub_field('panel_id');
 				//var_dump($panel_name_loc);
@@ -256,7 +327,6 @@ get_header('cpl'); ?>
 			<div class="panel locations" id="<?php echo $id_add_underscore_loc; ?>">
 				<?php $loc_cnt=0;
 				if(have_rows('locations_grid')): ?>
-				<div class="locations panel">
 					<div class="mesh-container">
 					<div class="mesh-row">
 				<?php 	while(have_rows('locations_grid')):the_row();
@@ -276,8 +346,16 @@ get_header('cpl'); ?>
 			</div>
 			<?php endif; ?>	
 			<?php }elseif($panel_type == 'sponsors'){ 
-				if(have_rows('sponsor_panel')):?>
-				<div class="panel sponsors" id="<?php echo $id_add_underscore2; ?>">
+				$tb_text_sponsor = get_sub_field('title_row_text');
+				$panel_bg_color_partners = get_sub_field('panel_background_color');
+				if(have_rows('sponsor_panel')):
+					?>
+				<div class="panel sponsors" id="<?php echo $id_add_underscore2; ?>" <?php if($panel_bg_color_partners != ""){ echo 'style="background-color:'.$panel_bg_color_partners.';"'; }?>>
+					<div class="title-bar">
+						<p><?php echo $tb_text_sponsor; ?></p>
+					</div>
+					<div class="mesh-container">
+						<div class="mesh-row">
 					<?php while(have_rows('sponsor_panel')):the_row();
 				$sponsor_logo = get_sub_field('sponsor_logo');
 				//var_dump($sponsor_logo);
@@ -293,22 +371,28 @@ get_header('cpl'); ?>
 				$external = get_sub_field('external');
 				$target='';
 				if($external != ''){
-					$target= 'target="_blank';
+					$target= 'target="_blank"';
 				}	
 				?>
 
 				<?php if ($sponsor_link != ''){ ?>
 				<a href="<?php echo $sponsor_link; ?>" <?php echo $target; ?> >
 				<?php } ?>
-					<img src="<?php echo $sponsor_logo_URL; ?>" <?php echo $alt; ?> >
+				<div class="columns-3">
+					<div class="logo-wrap">
+						<img src="<?php echo $sponsor_logo_URL; ?>" <?php echo $alt; ?> >
+					</div>
+				</div>
 				<?php if ($sponsor_link != ''){ ?>
 				</a>
 				<?php } 
 					endwhile; ?>
-					</div>
+					</div></div></div>
 					<?php endif;?>
 			<!-- https://www.google.com/maps?saddr=My+location&daddr= -->
-
+			<?php }elseif($panel_type == 'image-only'){ ?>
+			<div class="panel image-only" id="<?php echo $id_add_underscore_io; ?>">
+			</div>
 	<?php  } endwhile; endif; ?>
 
 </main><!-- End of Content -->

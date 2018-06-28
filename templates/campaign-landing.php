@@ -159,6 +159,7 @@ get_header('cpl'); ?>
 							<div class="mesh-row">
 							<?php while(have_rows('cards')): the_row();
 								$card_cnt++;
+
 								//$color = get_sub_field('color');
 								
 
@@ -217,7 +218,7 @@ get_header('cpl'); ?>
 						<!-- </div> -->
 					</div>
 				</div>
-			<?php	} elseif ($panel_type == 'wysiwyg') { 
+			<?php	} elseif ($panel_type == 'wysiwyg') {
 				$panel_name_text = get_sub_field('panel_id');
 				$id_link_text_text = ucwords($panel_name_text);
 				$id_text_lower_text = strtolower($panel_name_text);
@@ -278,9 +279,19 @@ get_header('cpl'); ?>
 					</div>
 		        	<div class="img-panel">
 						<img class="feature-img" src="<?php echo $image_url; ?>" alt="map">
-						<!-- <div class="map-key">
-							<p>This facility offers <span class="dynamic">both iud + contraceptive implant</span> services</p>
-						</div> -->
+						<div class="map-key">
+						<div class="key-row">
+							<?php
+							$folder = get_stylesheet_directory_uri();
+							?>
+							<img class="key-marker" src="<?php echo $folder.'/img/marker1.png' ?>" alt="marker">
+							<p class="key-text">This facility offers <span class="blue">both iud + contraceptive implant</span> services <img class="key-icon" src="<?php echo $folder.'/img/iud_blue.png' ?>" alt="iud icon"> <img class="key-icon" src="<?php echo $folder.'/img/implant_blue.png' ?>" alt="implant icon"></p>
+						</div>
+						<div class="key-row">
+							<img class="key-marker" src="<?php echo $folder.'/img/marker2.png' ?>" alt="marker">
+							<p class="key-text">This facility offers <span class="purple">only contraceptive implant</span> services <img class="key-icon" src="<?php echo $folder.'/img/implant_purple.png' ?>" alt="iud icon"></p>
+						</div>
+					</div>
 				
 	        		</div>
 	        		
@@ -356,6 +367,7 @@ get_header('cpl'); ?>
 					</div>
 					<div class="mesh-container">
 						<div class="mesh-row">
+
 					<?php while(have_rows('sponsor_panel')):the_row();
 				$sponsor_logo = get_sub_field('sponsor_logo');
 				//var_dump($sponsor_logo);
@@ -371,8 +383,10 @@ get_header('cpl'); ?>
 				$external = get_sub_field('external');
 				$target='';
 				if($external != ''){
+
 					$target= 'target="_blank"';
 				}	
+
 				?>
 
 				<?php if ($sponsor_link != ''){ ?>
@@ -385,7 +399,7 @@ get_header('cpl'); ?>
 				</div>
 				<?php if ($sponsor_link != ''){ ?>
 				</a>
-				<?php } 
+				<?php }
 					endwhile; ?>
 					</div></div></div>
 					<?php endif;?>
@@ -394,7 +408,32 @@ get_header('cpl'); ?>
 			<div class="panel image-only" id="<?php echo $id_add_underscore_io; ?>">
 			</div>
 	<?php  } endwhile; endif; ?>
-
+<div class="partner panel">
+	<div class="mesh-container">
+		<div class="mesh-row">
+			<div class="columns-3">
+				<div class="logo-wrap">
+					<img src="http://localhost:8888/wvfree/wp-content/uploads/WVFREE_PrimaryLogo_Black.png" alt="">
+				</div>
+			</div>
+			<div class="columns-3">
+				<div class="logo-wrap">
+					<img src="http://localhost:8888/wvfree/wp-content/uploads/WV-BehavioralHealthcareProvidersAssoc_Black.png" alt="">
+				</div>
+			</div>
+			<div class="columns-3">
+				<div class="logo-wrap">
+					<img src="http://localhost:8888/wvfree/wp-content/uploads/WV_Perinatal_Logo_Black.png" alt="">
+				</div>
+			</div>
+			<div class="columns-3">
+				<div class="logo-wrap">
+					<img src="http://localhost:8888/wvfree/wp-content/uploads/wvfree-drannelbanfieldmd-partnerlogo_black.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </main><!-- End of Content -->
 
 <?php get_footer('cpl'); ?>

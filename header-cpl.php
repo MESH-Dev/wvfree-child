@@ -118,15 +118,10 @@
 
 	<!-- Favicons
 	================================================== -->
-	<?php
-	$logo = get_field('site_logo', 'option');
-	$logo_url = $logo['sizes']['medium'];
-	$favicon_url = $logo['sizes']['small'];
-	?>
-	<link rel="shortcut icon" href="<?php echo $favicon_url ?>">
-	<link rel="apple-touch-icon" href="<?php echo $favicon_url ?>">
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $favicon_url ?>">
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $favicon_url ?>">
+	<!-- <link rel="shortcut icon" href="<//?php echo $favicon_url ?>">
+	<link rel="apple-touch-icon" href="<//?php echo $favicon_url ?>">
+	<link rel="apple-touch-icon" sizes="72x72" href="<//?php echo $favicon_url ?>">
+	<link rel="apple-touch-icon" sizes="114x114" href="<//?php echo $favicon_url ?>"> -->
 
 	<!-- Analytics -->
 	<?php the_field('google_analytics_code', 'option'); ?>
@@ -170,4 +165,4 @@
 	<?php
 	$primary_color = get_field('primary_color', 'option');
 	?>
-	
+

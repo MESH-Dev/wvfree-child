@@ -10,7 +10,7 @@ header{
    width: 100px;
    text-align: center;
    background-color: $navy;
-   @media screen and ($bp-smaller-than-desktophd){
+   @media screen and ($bp-smaller-than-tablet){
       overflow: visible;
       width: 100%;
       height: 64px;
@@ -22,26 +22,35 @@ header{
 
 .logo{
    display: inline-block;
-   height: 64px;
    overflow: hidden;
+   margin: 20px 0 10px 0;
    img{
-      height: 38px;
+      height: 62px;
       width: auto;
       margin: 13px 0;
+      @media screen and ($bp-smaller-than-tablet){
+         height: 38px;
+      }
+   }
+   @media screen and ($bp-smaller-than-tablet){
+      margin: 0 20px;
+      height: 64px;
    }
 }
 
 .main-navigation{
-   // display: inline-block;
-   // float: right;
+   @media screen and ($bp-smaller-than-tablet){
+      display: inline-block;
+      float: right;
+   }
    ul{
       margin: 0px;
-      @media screen and ($bp-smaller-than-desktophd){
+      @media screen and ($bp-smaller-than-tablet){
          position: fixed;
          top: 64px;
          left: 0;
          right: 0;
-         // background-color: $primary_color;
+         background-color: $slate_blue;
          width: 100%;
          box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
          display: none;
@@ -53,7 +62,7 @@ header{
          // margin: 0 0 0 10px;
          margin: 0 0 10px 0;
          transition: background-color 0.2s ease-in-out;
-         @media screen and ($bp-smaller-than-desktophd){
+         @media screen and ($bp-smaller-than-tablet){
             display: block;
             text-align: center;
             margin-left: 0px;
@@ -65,16 +74,14 @@ header{
             // display: inline-block;
             // line-height: 64px;
             font-family: $isidora-bold;
-            font-size: 15px;
+            font-size: 12px;
             color: $white;
             // padding: 0 20px;
             padding: 20px 10px;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             transition: all 0.2s ease-in-out;
-            // font-family: $av-demibold;
-            //font-family: $primary_font;
-            // font-weight: 600;
             display: block;
+            text-transform: uppercase;
             &:hover{
                text-decoration: none;
                // background-color: rgba(0,0,0,0.15);
@@ -99,14 +106,15 @@ header{
    display: inline-block;
    line-height: 64px;
    font-size: 15px;
+   font-family: $isidora-bold;
    color: $white;
    padding: 0 20px;
    letter-spacing: 1.5px;
    cursor: pointer;
-   // font-family: $av-demibold;
-   //font-family: $primary_font;
-   font-weight: 800;
    &:hover{
       text-decoration: none;
+   }
+   @media screen and ($bp-larger-than-tablet){
+      display: none;
    }
 }

@@ -2091,6 +2091,13 @@ main#content .panel .mesh-container {
 }
 
 /* line 649, sass/modules/_modules.scss */
+div.wpcf7-response-output {
+  border: 3px solid #BE9971 !important;
+  margin: 4em 0 0.5em 1em;
+  color: #868F9E;
+}
+
+/* line 655, sass/modules/_modules.scss */
 .clearfix {
   clear: both;
 }

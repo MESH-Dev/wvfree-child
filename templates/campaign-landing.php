@@ -142,7 +142,7 @@ get_header('cpl'); ?>
 							$cta_title = get_sub_field('cta_card_title');
 							$cta_title_color = get_sub_field('cta_card_title_color');
 							$cta_link_text = get_sub_field('cta_card_link_text');
-							$cta_link_text_color = get_sub_field('cta_link_text_color');
+							$cta_link_text_color = get_sub_field('cta_card_link_text_color');
 							$cta_card_link = get_sub_field('cta_card_link');
 							$cta_external = get_sub_field('external');
 							//$cta_

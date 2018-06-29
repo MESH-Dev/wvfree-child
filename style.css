@@ -1456,7 +1456,7 @@ main#content .panel .mesh-container {
 /* line 89, sass/modules/_modules.scss */
 .welcome-gate .sign h1 {
   line-height: 1.25;
-  margin-bottom: 20px;
+  margin: 60px 0;
   font-size: 36px;
   letter-spacing: 2.25px;
   font-family: "lust", serif;

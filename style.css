@@ -2095,9 +2095,12 @@ div.wpcf7-response-output {
   border: 3px solid #BE9971 !important;
   margin: 4em 0 0.5em 1em;
   color: #868F9E;
+  font-family: "Isidora Sans W00 Black";
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
-/* line 655, sass/modules/_modules.scss */
+/* line 658, sass/modules/_modules.scss */
 .clearfix {
   clear: both;
 }

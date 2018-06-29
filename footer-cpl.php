@@ -6,7 +6,7 @@ $contact_section_statement = get_field('contact_section_statement', 'option');
 ?>
 <footer id="footer" class="panel site-footer primary">
 
-	<div class="mesh-container">
+	<div class="mesh-container" id="contact">
 		<div class="mesh-row">
          <div id="left-col" class="columns-4">
             <h5 class="footer-title pf"><?php the_field('contact_section_title', 'option'); ?></h5>

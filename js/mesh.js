@@ -48,17 +48,23 @@ jQuery(document).ready(function($){
 
    //Taken from https://jsfiddle.net/cse_tushar/Dxtyu/141/
    $(document).on("scroll", onScroll);    
-
+   console.log('Page is this tall '+$(document).height());
    function onScroll(event){
        var scrollPos = $(document).scrollTop();
+
+      // height of the document (total height)
+      var d = $(document).height();
+       
+      // height of the window (visible page)
+      var w = $(window).height();
+
+       console.log(scrollPos);
        $('.main-navigation ul li a').each(function () {
            var currLink = $(this);
-           console.log(currLink);
-           //var currLi = $(this).parent('li');
            var currLi = $(this);
            var refElement = $(currLink.attr("href"));
-           console.log(refElement);
-           if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+           //Note, the OR is checking as to whether our current scroll position is at the bottom of the screen
+           if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos || d-(w+scrollPos) == 0  ) {
                $('.main-navigation ul li a').removeClass("active");
                currLi.addClass("active");
            }
@@ -73,12 +79,12 @@ jQuery(document).ready(function($){
        $(this).addClass('active');
    })
 
-   // $('#scrollLink').click(function(){
-   //    var dist = ($('#top').outerHeight()) - 60;
-   //    $('html,body').animate({
-   //       scrollTop: (dist)
-   //    }, 600);
-   // });
+   $('#scrollLink').click(function(){
+      var dist = ($('#top').outerHeight());
+      $('html,body').animate({
+         scrollTop: (dist)
+      }, 600);
+   });
 
    //Taken from https://jsfiddle.net/cse_tushar/Dxtyu/141/
    //This does not fire for the footer (contact section).

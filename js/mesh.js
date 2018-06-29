@@ -35,7 +35,7 @@ jQuery(document).ready(function($){
            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
               if (target.length) {
                 $('html,body').animate({
-                    scrollTop: (target.offset().top - 60)
+                    scrollTop: (target.offset().top)
                }, 600);
                return false;
            }
@@ -46,12 +46,39 @@ jQuery(document).ready(function($){
       $('.main-navigation ul').slideToggle();
    });
 
-   $('#scrollLink').click(function(){
-      var dist = ($('#top').outerHeight()) - 60;
-      $('html,body').animate({
-         scrollTop: (dist)
-      }, 600);
-   });
+   //Taken from https://jsfiddle.net/cse_tushar/Dxtyu/141/
+   $(document).on("scroll", onScroll);    
+
+   function onScroll(event){
+       var scrollPos = $(document).scrollTop();
+       $('.main-navigation ul li a').each(function () {
+           var currLink = $(this);
+           console.log(currLink);
+           //var currLi = $(this).parent('li');
+           var currLi = $(this);
+           var refElement = $(currLink.attr("href"));
+           console.log(refElement);
+           if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+               $('.main-navigation ul li a').removeClass("active");
+               currLi.addClass("active");
+           }
+           else{
+               currLi.removeClass("active");
+           }
+       });
+   }
+
+   $('.main-navigation ul li a').click(function(){
+      $('.main-navigation ul li a').removeClass('active');
+       $(this).addClass('active');
+   })
+
+   // $('#scrollLink').click(function(){
+   //    var dist = ($('#top').outerHeight()) - 60;
+   //    $('html,body').animate({
+   //       scrollTop: (dist)
+   //    }, 600);
+   // });
 
    //Taken from https://jsfiddle.net/cse_tushar/Dxtyu/141/
    //This does not fire for the footer (contact section).
@@ -145,11 +172,14 @@ var footerScene = new ScrollMagic.Scene({triggerElement: ".site-footer", trigger
    .addTo(controller);
 
 //Scroll-based active nav item class toggling that successfully fires for the footer and allows smoother scrolling.
-for (var i = 0; i < navItems.length; i++) {
-   var refLink = navItems[i].href.split('#')[1];
-   var refElement = document.getElementById(refLink);
-   var refHeight = refElement.getBoundingClientRect().height;
-   new ScrollMagic.Scene({triggerElement: refElement, duration: refHeight})
-            .setClassToggle(navItems[i], "active") // add class toggle
-            .addTo(controller);
-};
+// for (var i = 0; i < navItems.length; i++) {
+//    var refLink = navItems[i].href.split('#')[1];
+//    console.log(refLink);
+//    var refElement = document.getElementById(refLink);
+//    console.log(refElement);
+//    var refHeight = refElement.getBoundingClientRect().height;
+//    console.log(refHeight);
+//    new ScrollMagic.Scene({triggerElement: refElement, duration: refHeight})
+//             .setClassToggle(navItems[i], "active") // add class toggle
+//             .addTo(controller);
+// };

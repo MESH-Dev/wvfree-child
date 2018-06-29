@@ -139,8 +139,9 @@ get_header('cpl'); ?>
 							<?php
 							$cards = get_sub_field('cards');
 							$cta_title = get_sub_field('cta_card_title');
-
+							$cta_title_color = get_sub_field('cta_card_title_color');
 							$cta_link_text = get_sub_field('cta_card_link_text');
+							$cta_link_text_color = get_sub_field('cta_link_text_color');
 							$cta_card_link = get_sub_field('cta_card_link');
 							$cta_external = get_sub_field('external');
 							//$cta_
@@ -198,8 +199,10 @@ get_header('cpl'); ?>
 							}elseif($card_cnt == $card_num){ ?>
 								<div class='card columns-4 dl'>
 									<div class="text">
-										<h3 class="dl-title"><?php echo $cta_title; ?></h3>
-										<p class="dl-link"><?php echo $cta_link_text; ?></p>
+										<div class="content">
+											<h3 class="dl-title" <?php if($cta_title_color != ''){ echo 'style="color:'.$cta_title_color.';"';}?>><?php echo $cta_title; ?></h3>
+											<p class="dl-link" <?php if($cta_link_text_color != ''){ echo 'style="color:'.$cta_link_text_color.';"';}?>><?php echo $cta_link_text; ?></p>
+										</div>
 									</div>
 								</div>
 							</div><!--end final row -->

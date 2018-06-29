@@ -70,6 +70,14 @@ main#content{
       -ms-transform: translateX(-50%);
       transform: translateX(-50%);
       cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:active{
+         svg{
+            opacity:.6;
+         }
+      }
       svg{
          width: 65px;
       }
@@ -79,7 +87,7 @@ main#content{
       max-width: 845px;
       margin: 0 auto;
       h1{
-         line-height: 65px;
+         line-height: 1.25;
          margin-bottom: 20px;
          font-size: 36px;
          letter-spacing: 2.25px;
@@ -196,7 +204,7 @@ main#content{
                font-family: $primary_font;
                font-size: 33px;
                letter-spacing: 2.06px;
-               color: $yellow;
+               color: $burnt_red;
             }
             p.dl-link, a.dl-link{
                font-family: $primary_font;
@@ -211,6 +219,18 @@ main#content{
             }
             p{
                color: $alt-gray;
+            }
+         }
+         &.dl{
+            
+           
+            .text{
+               display:table;
+               width:100%;
+            }
+            .content{
+               display:table-cell;
+               vertical-align: middle;
             }
          }
          &.yellow{
@@ -502,7 +522,9 @@ main#content{
 .img-panel{
    position: relative;
    @media screen and ($bp-smaller-than-tablet){
-      display: none;
+      img{
+         display: none;
+      }
    }
    .feature-img{
       width: 100%;

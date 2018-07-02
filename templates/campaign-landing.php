@@ -202,7 +202,7 @@ get_header('cpl'); ?>
 									<div class="text">
 										<div class="content">
 											<h3 class="dl-title" <?php if($cta_title_color != ''){ echo 'style="color:'.$cta_title_color.';"';}?>><?php echo $cta_title; ?></h3>
-											<p class="dl-link" <?php if($cta_link_text_color != ''){ echo 'style="color:'.$cta_link_text_color.';"';}?>><a href="<?php echo $cta_card_link; ?>"><?php echo <?php echo $cta_link_text; ?></a></p>
+											<p class="dl-link" <?php if($cta_link_text_color != ''){ echo 'style="color:'.$cta_link_text_color.';"';}?>><a href="<?php echo $cta_card_link; ?>"><?php echo $cta_link_text; ?></a></p>
 										</div>
 									</div>
 								</div>

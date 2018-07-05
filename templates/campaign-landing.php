@@ -37,7 +37,7 @@ get_header('cpl'); ?>
 				endwhile; endif;
 					//var_dump($panels);
 			?>
-			<li class=""><a href="#contact" class="">Contact Us</a></li>
+			<li class=""><a <?php if($navigation_text_color != ''){echo 'style="color:'.$navigation_text_color.';"'; }?> href="#contact" class="">Contact Us</a></li>
 			<!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#panel" class="">Know Your Options</a></li> -->
 			<!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#footer" class="">Second Heading</a></li> -->
 		</ul>

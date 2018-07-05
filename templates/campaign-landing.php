@@ -15,7 +15,7 @@ get_header('cpl'); ?>
 		<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img src="<?php echo $logo_url ?>" alt="">
 			<?php if ($campaign_tagline != '') { ?>
-			<p <?php if ($campaign_tagline_color != ''){ echo 'style="color:'.$campaign_tagline_color.';"';} ?> class="tagline"><?php echo $campaign_tagline; ?></p>
+			<p class="tagline" <?php if ($campaign_tagline_color != ''){ echo 'style="color:'.$campaign_tagline_color.';"';} ?> class="tagline"><?php echo $campaign_tagline; ?></p>
 			<?php } ?>
 		</a>
 	<nav id="main-nav" class="main-navigation">

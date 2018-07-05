@@ -8,8 +8,9 @@ get_header('cpl'); ?>
 		$logo = get_field('site_logo');
 		$logo_url = $logo['sizes']['medium'];
 		
+		
 		?>
-		<a class="logo" href="#top">
+		<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img src="<?php echo $logo_url ?>" alt="">
 		</a>
 	<nav id="main-nav" class="main-navigation">

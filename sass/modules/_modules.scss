@@ -16,6 +16,17 @@ main#content{
    }
 }
 
+//Header
+
+.tagline{
+   font-family: "Isidora Sans W00 Bold";
+   font-size: 7px;
+   text-align: center;
+   text-transform: capitalize;
+   font-weight: 700;
+   color:$white;
+}
+
 .welcome-gate{
    height: 100vh;
    position: relative;
@@ -489,7 +500,9 @@ main#content{
    }
    a{
       color: $white;
-      &:hover{
+      &:hover
+      &:active,
+      &:focus{
          text-decoration: none;
          img{
             -webkit-transform: translateY(-8px);
@@ -598,7 +611,9 @@ main#content{
       letter-spacing: 1px;
       color: $navy;
       transition: opacity 0.2s ease-in-out;
-      &:hover{
+      &:hover,
+      &:active,
+      &:focus{
          text-decoration: none;
          opacity: 0.5;
       }

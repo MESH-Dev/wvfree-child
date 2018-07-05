@@ -7,11 +7,16 @@ get_header('cpl'); ?>
 		<?php
 		$logo = get_field('site_logo');
 		$logo_url = $logo['sizes']['medium'];
-		
+		$campaign_tagline=get_field('campaign_tagline');
+		$campaign_tagline_color=get_field('campaign_tagline_color');
+		$navigation_text_color = get_field('navigation_text_color');
 		
 		?>
 		<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img src="<?php echo $logo_url ?>" alt="">
+			<?php if ($campaign_tagline != '') { ?>
+			<p <?php if ($campaign_tagline_color != ''){ echo 'style="color:'.$campaign_tagline_color.';"';} ?> class="tagline"><?php echo $campaign_tagline; ?></p>
+			<?php } ?>
 		</a>
 	<nav id="main-nav" class="main-navigation">
 		<ul id="menu-main_nav" class="menu">
@@ -26,7 +31,7 @@ get_header('cpl'); ?>
 							$id_add_underscore = str_replace(' ', '_', $id_text_lower);
 							if($panel_id){
 			?>
-			<li class=""><a href="#<?php echo $id_add_underscore; ?>" class=""><?php echo $id_link_text; ?></a></li>
+			<li class=""><a <?php if($navigation_text_color != ''){echo 'style="color:'.$navigation_text_color.';"'; }?> href="#<?php echo $id_add_underscore; ?>" class=""><?php echo $id_link_text; ?></a></li>
 			<?php
 			}
 				endwhile; endif;

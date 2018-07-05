@@ -308,6 +308,7 @@ get_header('cpl'); ?>
 				$location_name = get_sub_field('location_name');
 				$location_address = get_sub_field('location_address');
 				$location_phone = get_sub_field('location_phone');
+				$location_url = get_sub_field('location_url');
 				$directions = str_replace('<br />', ' ', $location_address);
 				$contraceptive = get_sub_field('only_contraceptive');
 
@@ -322,9 +323,20 @@ get_header('cpl'); ?>
 				<?php } ?>
 				
 					<div class="columns-4 location-card <?php echo $loc_color; ?>">
-						<h2><?php echo $loc_cnt; ?>. <?php echo $location_name; ?></h2>
+						<h2>
+							<?php echo $loc_cnt; ?>. 
+							<?php if ($location_url !=''){ ?>
+							<a href="<?php echo $location_url; ?>">
+							<?php } ?>
+							<?php echo $location_name; ?>
+							<?php if ($location_url !=''){ ?>
+							<i class="fa fa-fw fa-link"></i></a>
+							<?php } ?>
+						</h2>
 						<p><?php echo $location_address; ?><br />
-						<?php echo $location_phone; ?></p>
+						<?php echo $location_phone; ?><br />
+						
+					</p>
 						<a class="directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=current+location&amp;destination=<?php echo $directions; ?>" target="_blank">Get Directions >></a>
 					</div>
 				<?php endwhile; ?>

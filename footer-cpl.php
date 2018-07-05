@@ -16,6 +16,7 @@ $contact_section_statement = get_field('contact_section_statement', 'option');
             $line2 = get_field('address_line_2', 'option');
             $phone = get_field('phone_number', 'option');
             $email = get_field('email_address', 'option');
+            $contact_outro = get_field('contact_outro', 'option');
             $contact_form = get_field('contact_form_shortcode', 'option'); ?>
 				<div class="address">
 				<?php
@@ -34,6 +35,9 @@ $contact_section_statement = get_field('contact_section_statement', 'option');
             if (!empty($email)) { ?>
                <a href="mailto:<?php echo $email ?>" class="pf"><p><?php echo $email ?></p></a>
             <?php }; ?>
+            <?php if(!empty ($contact_outro)){ ?>
+               <p class="pf"><?php echo $contact_outro; ?></p>
+            <?php } ?>
 				</div>
 				<div class="social">
 					<?php

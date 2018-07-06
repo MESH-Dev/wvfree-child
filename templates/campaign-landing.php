@@ -332,12 +332,9 @@ get_header('cpl'); ?>
 						<h2>
 							<?php echo $loc_cnt; ?>. 
 							<?php if ($location_url !=''){ ?>
-							<a href="<?php echo $location_url; ?>">
+							<a href="<?php echo $location_url; ?>" target="_blank">
 							<?php } ?>
 							<?php echo $location_name; ?>
-							<?php if ($location_url !=''){ ?>
-							<i class="fa fa-fw fa-link"></i></a>
-							<?php } ?>
 						</h2>
 						<p><?php echo $location_address; ?><br />
 						<?php echo $location_phone; ?><br />

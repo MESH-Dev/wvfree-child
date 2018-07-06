@@ -24,6 +24,12 @@ header{
    display: inline-block;
    overflow: hidden;
    margin: 20px 0 10px 0;
+
+   &:hover,
+   &:active,
+   &:focus{
+      opacity:.6; 
+   }
    img{
       height: 62px;
       width: auto;

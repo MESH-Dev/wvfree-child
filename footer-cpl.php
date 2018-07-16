@@ -18,16 +18,11 @@ $contact_section_statement = get_field('contact_section_statement', 'option');
             $email = get_field('email_address', 'option');
             $contact_outro = get_field('contact_outro', 'option');
             $contact_form = get_field('contact_form_shortcode', 'option'); ?>
-				<div class="address">
-				<?php
-            if (!empty($line1)) { ?>
-               <p class="pf"><?php echo $line1 ?></p>
-            <?php };
-            if (!empty($line2)) { ?>
-               <p class="pf"><?php echo $line2 ?></p>
-            <?php }; ?>
-				</div>
+				
 				<div class="contact-media">
+               <?php if(!empty ($contact_outro)){ ?>
+               <p class="pf"><?php echo $contact_outro; ?></p>
+            <?php } ?>
 				<?php
             if (!empty($phone)) { ?>
                <a href="tel:<?php echo $phone ?>" class="pf"><p><?php echo $phone ?></p></a>
@@ -35,10 +30,17 @@ $contact_section_statement = get_field('contact_section_statement', 'option');
             if (!empty($email)) { ?>
                <a href="mailto:<?php echo $email ?>" class="pf"><p><?php echo $email ?></p></a>
             <?php }; ?>
-            <?php if(!empty ($contact_outro)){ ?>
-               <p class="pf"><?php echo $contact_outro; ?></p>
-            <?php } ?>
+
 				</div>
+            <div class="address">
+            <?php
+            if (!empty($line1)) { ?>
+               <p class="pf"><?php echo $line1 ?></p>
+            <?php };
+            if (!empty($line2)) { ?>
+               <p class="pf"><?php echo $line2 ?></p>
+            <?php }; ?>
+            </div>
 				<div class="social">
 					<?php
 					if (have_rows('social_nav', 'options')):

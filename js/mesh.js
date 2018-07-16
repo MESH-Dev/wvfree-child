@@ -104,7 +104,8 @@ function _resize(){
       //console.log($target);
       //return $target;
    }); 
-   //$dt_clk=0;  
+   //var $dt_clk=0;  
+   $('.the_dropdown').slideUp();
    
 });
   }else if ($wW < 768){

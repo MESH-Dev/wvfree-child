@@ -11,6 +11,8 @@
 //    });
 // }
 
+
+
 var welcomeAnim = new TimelineMax(),
    footerAnim = new TimelineMax(),
    controller = new ScrollMagic.Controller(),
@@ -27,6 +29,158 @@ var welcomeAnim = new TimelineMax(),
 
 jQuery(document).ready(function($){
 
+$('.popup-container:eq(1)').detach();
+
+ //Force divs in homepage grid to be square
+//Setup variables to hold our sizes
+var gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7, $wW;
+
+//Grab the width of each element
+function gi_resize(){
+  gi2 = $('.grid-item-width2 ').width();
+  gi3 = $('.grid-item-width3 ').width();
+  //console.log(gi3);
+  gi4 = $('.grid-item-width4 ').width();
+  gi5 = $('.grid-item-width5 ').width();
+  gi6 = $('.grid-item-width6 ').width();
+  gi7 = $('.grid-item-width7 ').width();
+  cp4 = $('.columns-4').width();
+  cp5 = $('.columns-5').width();
+  cp6 =  $('.columns-6.eq ').width();
+  //console.log(cp6);
+  //cp6_alt = $('.columns-6')
+  cp7 = $('.columns-7.trip').width();
+  $wW = $(window).width();
+
+
+  //return gi2, gi3, gi4;
+}
+//Run the function above at document ready and on a window resize event
+ $(document).ready(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7, $wW));
+ $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7, $wW));
+
+//Apply our widths to the height of selected elements either on load, or on resize
+function _resize(){
+  gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7, $wW);
+   $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7,$wW));
+
+ //  console.log("Width 2: "+gi2);
+   // console.log("Width 3: "+gi3);
+   //  console.log("Width 4: "+gi4);
+  $('.grid-item-width2').css({height: (gi2)});
+  $('.grid-item-width2.nest').css({height: (gi2*2)});
+  $('.grid-item-width2.nest .nested').css({height: gi2});
+  $('.grid-item-width3').css({height: gi3});
+  $('.grid-item-width4').css({height: gi4});
+  $('.grid-item-width5').css({height: gi5})
+  $('.grid-item-width6').css({height: (gi6*.66)});
+  $('.width6-diamond').css({height: (gi6*0.4)});
+  $('.columns-4.child-links').css({height:cp4});
+  $('.columns-6.promo').css({height: (cp6*.5)});
+  $('.columns-6.cpromo').css({height: (cp6*.66)});
+  //console.log(cp6*.66);
+  $('.columns-6 .width6-diamond').css({height: (cp6*0.4)});
+  $('.columns-5.event-feed').css({height: (cp5)});
+  $('.columns-7.trip').css({height: cp5});
+  $('.grid-item-width6.nest').css({height: gi2});
+  $('.grid-item-width6.nest .nested').css({height: gi2});
+  $('.grid-item-width7').css({height: (gi5)});
+  $('.sidebar-io').css({height:cp4});
+  console.log($wW);
+  //var $target;
+  if($wW > 768){
+   $('.card').each(function(){
+   //$target = $(this).find('a.popup').attr("id");
+   $clicker = $(this).find('a.popup');
+   //console.log($target);
+   $($clicker).click(function(){
+      $target = $(this).attr("id");
+      $name = $('.popup-container .the-popup').data('name');
+      //console.log($name);
+      $('.popup-container').fadeIn('fast');
+      $('.popup-container .the_popup[data-name="'+$target+'"]').fadeIn('fast');
+      //$('.popup-container .the_popup[data-name="iuds"]').css({'display':'block'});
+      //$('.popup-container .the_popup[data-name="iuds"]').css({'display':'block'});
+      //console.log($target);
+      //return $target;
+   }); 
+   //$dt_clk=0;  
+   
+});
+  }else if ($wW < 768){
+   var $dt_clk=0;
+   //$target;
+   $('.popup-container').hide();
+      $('.dropdown-trigger').each(function(){
+         $(this).click(function(){
+            $dt_clk++;
+            console.log($dt_clk);
+            //$target;
+            //console.log($target);
+            if($dt_clk == 1){
+
+            $(this).next('.the_dropdown').slideDown();
+            $(this).find('svg').css({'transform':'rotate(180deg'});
+            }else{
+               $dt_clk=0;
+               $(this).next('.the_dropdown').slideUp();
+               $(this).find('svg').css({'transform':'rotate(0deg'});
+            }
+         });
+      });
+         $('a.popup').click(function(e){
+            e.stopPropagation();
+         });
+  }
+
+
+}
+
+//Run the function on load & on resize
+_resize();
+$(window).resize(_resize);
+
+//BC Methods Popups 
+
+
+
+$('.popup-container').click(function(){
+   $(this).css({'display':'none'});
+   $('.the_popup').css({'display':'none'});
+});
+
+// $('.card').each(function(){
+//    //$target = $(this).find('a.popup').attr("id");
+//    $clicker = $(this).find('a.popup');
+//    //console.log($target);
+//    $($clicker).click(function(){
+//       $target = $(this).attr("id");
+//       $name = $('.popup-container .the-popup').data('name');
+//       //console.log($name);
+//       $('.popup-container').fadeIn('fast');
+//       $('.popup-container .the_popup[data-name="'+$target+'"]').fadeIn('fast');
+//       //$('.popup-container .the_popup[data-name="iuds"]').css({'display':'block'});
+//       //$('.popup-container .the_popup[data-name="iuds"]').css({'display':'block'});
+//       //console.log($target);
+//    });   
+   
+// });
+
+
+
+//BC Methods Dropdowns
+
+// $('.dropdown-trigger').click(function(){
+//    $(this).next('.the_dropdown').slideDown();
+// })
+var $top
+
+if($wW > 768){
+   $top = 0;
+}else if ($wW < 768){
+   $top=-64;
+}
+
   $('a[href*=#]:not([href=#])').click(function() {
        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
            || location.hostname == this.hostname) {
@@ -35,7 +189,7 @@ jQuery(document).ready(function($){
            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
               if (target.length) {
                 $('html,body').animate({
-                    scrollTop: (target.offset().top)
+                    scrollTop: (target.offset().top-64)
                }, 600);
                return false;
            }
@@ -80,11 +234,19 @@ jQuery(document).ready(function($){
    })
 
    $('#scrollLink').click(function(){
-      var dist = ($('#top').outerHeight());
+      var dist = ($('#top').outerHeight()-64);
       $('html,body').animate({
          scrollTop: (dist)
       }, 600);
    });
+
+   var wH = $(window).width();
+
+   $(window).scroll(wH
+
+      );
+
+   console.log(wH)
 
    //Taken from https://jsfiddle.net/cse_tushar/Dxtyu/141/
    //This does not fire for the footer (contact section).

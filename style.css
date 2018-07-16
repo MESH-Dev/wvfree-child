@@ -1629,14 +1629,14 @@ main#content .panel .mesh-container {
 .panel.cards .card {
   z-index: 2;
 }
-/* line 228, sass/modules/_modules.scss */
+/* line 230, sass/modules/_modules.scss */
 .panel.cards .card .text h3.dl-title {
   font-family: "lust", serif;
   font-size: 33px;
   letter-spacing: 2.06px;
   color: #D86E73;
 }
-/* line 234, sass/modules/_modules.scss */
+/* line 236, sass/modules/_modules.scss */
 .panel.cards .card .text p.dl-link, .panel.cards .card .text a.dl-link {
   font-family: "lust", serif;
   font-size: 33px;
@@ -1645,50 +1645,51 @@ main#content .panel .mesh-container {
   text-decoration: none;
   transition: opacity 0.2s ease-in-out;
 }
-/* line 241, sass/modules/_modules.scss */
+/* line 243, sass/modules/_modules.scss */
 .panel.cards .card .text p.dl-link:hover, .panel.cards .card .text p.dl-link:active, .panel.cards .card .text p.dl-link:focus, .panel.cards .card .text a.dl-link:hover, .panel.cards .card .text a.dl-link:active, .panel.cards .card .text a.dl-link:focus {
   opacity: 0.5;
+  text-decoration: none !important;
 }
-/* line 247, sass/modules/_modules.scss */
+/* line 250, sass/modules/_modules.scss */
 .panel.cards .card .text p {
   color: #3F3E3B;
 }
-/* line 254, sass/modules/_modules.scss */
+/* line 255, sass/modules/_modules.scss */
 .panel.cards .card.dl .text {
   display: table;
   width: 100%;
 }
-/* line 258, sass/modules/_modules.scss */
+/* line 259, sass/modules/_modules.scss */
 .panel.cards .card.dl .content {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 264, sass/modules/_modules.scss */
+/* line 265, sass/modules/_modules.scss */
 .panel.cards .card.yellow h3 {
   color: #BE9971;
 }
-/* line 270, sass/modules/_modules.scss */
+/* line 271, sass/modules/_modules.scss */
 .panel.cards .card.red h3 {
   color: #D86E73;
 }
-/* line 276, sass/modules/_modules.scss */
+/* line 277, sass/modules/_modules.scss */
 .panel.cards .card.blue h3 {
   color: #868F9E;
 }
-/* line 282, sass/modules/_modules.scss */
+/* line 283, sass/modules/_modules.scss */
 .panel.cards .card.purple h3 {
   color: #BE748a;
 }
-/* line 289, sass/modules/_modules.scss */
+/* line 290, sass/modules/_modules.scss */
 .panel.wysiwyg h1, .panel.wysiwyg h2, .panel.wysiwyg h3, .panel.wysiwyg h4, .panel.wysiwyg h5, .panel.wysiwyg h6 {
   margin-bottom: 10px;
 }
-/* line 291, sass/modules/_modules.scss */
+/* line 292, sass/modules/_modules.scss */
 .panel.wysiwyg h1 a, .panel.wysiwyg h2 a, .panel.wysiwyg h3 a, .panel.wysiwyg h4 a, .panel.wysiwyg h5 a, .panel.wysiwyg h6 a {
   font-weight: inherit;
   text-decoration: underline;
 }
-/* line 296, sass/modules/_modules.scss */
+/* line 297, sass/modules/_modules.scss */
 .panel.wysiwyg h1 {
   font-size: 48px;
   letter-spacing: 1.5px;
@@ -1696,7 +1697,7 @@ main#content .panel .mesh-container {
   font-family: "lust", serif;
   font-weight: 400;
 }
-/* line 303, sass/modules/_modules.scss */
+/* line 304, sass/modules/_modules.scss */
 .panel.wysiwyg h2 {
   font-size: 36px;
   letter-spacing: 1.12px;
@@ -1704,14 +1705,14 @@ main#content .panel .mesh-container {
   font-family: "Isidora Sans W00 Black";
   text-transform: uppercase;
 }
-/* line 310, sass/modules/_modules.scss */
+/* line 311, sass/modules/_modules.scss */
 .panel.wysiwyg h3 {
   font-size: 28px;
   color: #CDB7BE;
   letter-spacing: 1.2px;
   font-family: "Isidora Sans W00 Bold";
 }
-/* line 316, sass/modules/_modules.scss */
+/* line 317, sass/modules/_modules.scss */
 .panel.wysiwyg h4 {
   font-size: 24px;
   color: #BE9971;
@@ -1719,14 +1720,14 @@ main#content .panel .mesh-container {
   font-family: "lust", serif;
   font-weight: 400;
 }
-/* line 323, sass/modules/_modules.scss */
+/* line 324, sass/modules/_modules.scss */
 .panel.wysiwyg h5 {
   font-size: 21px;
   letter-spacing: 0.66px;
   font-family: "Isidora Sans W00 Black";
   text-transform: uppercase;
 }
-/* line 329, sass/modules/_modules.scss */
+/* line 330, sass/modules/_modules.scss */
 .panel.wysiwyg h6 {
   font-size: 18px;
   color: #4C4B6B;
@@ -1734,14 +1735,14 @@ main#content .panel .mesh-container {
   font-family: "Isidora Sans W00 Black";
   text-transform: uppercase;
 }
-/* line 336, sass/modules/_modules.scss */
+/* line 337, sass/modules/_modules.scss */
 .panel.wysiwyg p, .panel.wysiwyg ul, .panel.wysiwyg li {
   font-family: "Isidora Sans W00 Regular";
   font-size: 16px;
   letter-spacing: 1px;
   color: #3F3E3B;
 }
-/* line 342, sass/modules/_modules.scss */
+/* line 343, sass/modules/_modules.scss */
 .panel.wysiwyg blockquote {
   letter-spacing: 0.4px;
   border-left: 1px solid #3F3E3B;
@@ -1750,26 +1751,26 @@ main#content .panel .mesh-container {
   font-style: italic;
   font-size: 20px;
 }
-/* line 351, sass/modules/_modules.scss */
+/* line 352, sass/modules/_modules.scss */
 .panel.wysiwyg blockquote p {
   font-weight: 400;
   font-style: italic;
   font-size: 20px;
 }
-/* line 359, sass/modules/_modules.scss */
+/* line 360, sass/modules/_modules.scss */
 .panel.wysiwyg ul li {
   list-style-type: disc;
 }
-/* line 362, sass/modules/_modules.scss */
+/* line 363, sass/modules/_modules.scss */
 .panel.wysiwyg ol li {
   list-style-type: decimal;
 }
-/* line 365, sass/modules/_modules.scss */
+/* line 366, sass/modules/_modules.scss */
 .panel.wysiwyg img {
   max-width: 100%;
   height: auto;
 }
-/* line 369, sass/modules/_modules.scss */
+/* line 370, sass/modules/_modules.scss */
 .panel.wysiwyg a {
   color: #4C4B6B;
   font-size: 18px;
@@ -1778,38 +1779,38 @@ main#content .panel .mesh-container {
   transition: opacity 0.2s ease-in-out;
   text-decoration: none;
 }
-/* line 376, sass/modules/_modules.scss */
+/* line 377, sass/modules/_modules.scss */
 .panel.wysiwyg a:hover, .panel.wysiwyg a:active, .panel.wysiwyg a:focus {
   text-decoration: none;
   opacity: 0.8;
 }
-/* line 383, sass/modules/_modules.scss */
+/* line 384, sass/modules/_modules.scss */
 .panel.wysiwyg .title-bar {
   background-color: #D5BB38;
   text-align: center;
-  padding: 20px;
+  padding: 20px 15px;
 }
-/* line 387, sass/modules/_modules.scss */
+/* line 388, sass/modules/_modules.scss */
 .panel.wysiwyg .title-bar p {
   color: #ECEBE4;
   font-family: "Isidora Sans W00 Black";
   font-size: 36px;
   letter-spacing: 1.12px;
 }
-@media screen and (max-width: 480px) {
-  /* line 387, sass/modules/_modules.scss */
+@media screen and (max-width: 1060px) {
+  /* line 388, sass/modules/_modules.scss */
   .panel.wysiwyg .title-bar p {
     font-size: 22px;
   }
 }
-/* line 399, sass/modules/_modules.scss */
+/* line 400, sass/modules/_modules.scss */
 .panel.intro h2 {
   font-size: 5.4rem;
   letter-spacing: 0.46px;
   line-height: 62px;
   font-weight: 500;
 }
-/* line 407, sass/modules/_modules.scss */
+/* line 408, sass/modules/_modules.scss */
 .panel.intro a.cta {
   line-height: 50px;
   color: #FFFFFF;
@@ -1823,30 +1824,30 @@ main#content .panel .mesh-container {
   font-weight: 400;
 }
 @media screen and (max-width: 750px) {
-  /* line 407, sass/modules/_modules.scss */
+  /* line 408, sass/modules/_modules.scss */
   .panel.intro a.cta {
     margin-bottom: 40px;
     margin-top: 0px;
   }
 }
-/* line 425, sass/modules/_modules.scss */
+/* line 426, sass/modules/_modules.scss */
 .panel.intro a.cta p {
   color: #FFFFFF;
 }
-/* line 428, sass/modules/_modules.scss */
+/* line 429, sass/modules/_modules.scss */
 .panel.intro a.cta:hover, .panel.intro a.cta:active, .panel.intro a.cta:focus {
   background: #FFFFFF;
   color: #c36256;
   border: 2px solid #FFFFFF;
 }
-/* line 436, sass/modules/_modules.scss */
+/* line 437, sass/modules/_modules.scss */
 .panel.intro p {
   color: #909090;
   font-size: 1.4rem;
   line-height: 22px;
   font-weight: 700;
 }
-/* line 442, sass/modules/_modules.scss */
+/* line 443, sass/modules/_modules.scss */
 .panel.intro p.cta {
   line-height: 50px;
   color: #FFFFFF;
@@ -1860,22 +1861,22 @@ main#content .panel .mesh-container {
   font-weight: 400;
 }
 @media screen and (max-width: 750px) {
-  /* line 442, sass/modules/_modules.scss */
+  /* line 443, sass/modules/_modules.scss */
   .panel.intro p.cta {
     margin-bottom: 40px;
     margin-top: 0px;
   }
 }
-/* line 460, sass/modules/_modules.scss */
+/* line 461, sass/modules/_modules.scss */
 .panel.intro p.cta p {
   color: #FFFFFF;
 }
-/* line 463, sass/modules/_modules.scss */
+/* line 464, sass/modules/_modules.scss */
 .panel.intro p.cta:hover, .panel.intro p.cta:active, .panel.intro p.cta:focus {
   background: #FFFFFF;
 }
 
-/* line 474, sass/modules/_modules.scss */
+/* line 475, sass/modules/_modules.scss */
 .hero {
   position: absolute;
   top: 0;
@@ -1887,7 +1888,7 @@ main#content .panel .mesh-container {
   background-position: center;
 }
 
-/* line 488, sass/modules/_modules.scss */
+/* line 489, sass/modules/_modules.scss */
 .img-filter {
   position: absolute;
   top: 0;
@@ -1897,63 +1898,62 @@ main#content .panel .mesh-container {
   opacity: 0.8;
 }
 
-/* line 498, sass/modules/_modules.scss */
+/* line 499, sass/modules/_modules.scss */
 .card {
   position: relative;
   text-align: center;
   color: #FFFFFF;
 }
 @media screen and (max-width: 750px) {
-  /* line 498, sass/modules/_modules.scss */
+  /* line 499, sass/modules/_modules.scss */
   .card {
     margin-bottom: 60px;
   }
-  /* line 504, sass/modules/_modules.scss */
+  /* line 505, sass/modules/_modules.scss */
   .card:last-of-type {
     margin-bottom: 0px;
   }
 }
-/* line 508, sass/modules/_modules.scss */
+/* line 509, sass/modules/_modules.scss */
 .card .text {
   margin: 0 auto;
 }
-/* line 511, sass/modules/_modules.scss */
+/* line 512, sass/modules/_modules.scss */
 .card a {
   color: #FFFFFF;
+  cursor: pointer;
 }
-/* line 513, sass/modules/_modules.scss */
-.card a:hover
-.card a:active, .card a:focus {
+/* line 515, sass/modules/_modules.scss */
+.card a:hover, .card a:active, .card a:focus {
   text-decoration: none;
 }
-/* line 517, sass/modules/_modules.scss */
-.card a:hover
-.card a:active img, .card a:focus img {
+/* line 519, sass/modules/_modules.scss */
+.card a:hover img, .card a:active img, .card a:focus img {
   -webkit-transform: translateY(-8px);
   -ms-transform: translateY(-8px);
   transform: translateY(-8px);
 }
-/* line 524, sass/modules/_modules.scss */
+/* line 526, sass/modules/_modules.scss */
 .card h3 {
   font-size: 32px;
   letter-spacing: 2px;
   font-family: "Isidora Sans W00 Black";
   font-weight: 600;
 }
-@media screen and (max-width: 480px) {
-  /* line 524, sass/modules/_modules.scss */
+@media screen and (max-width: 1060px) {
+  /* line 526, sass/modules/_modules.scss */
   .card h3 {
     font-size: 22px;
   }
 }
-/* line 534, sass/modules/_modules.scss */
+/* line 536, sass/modules/_modules.scss */
 .card p {
   font-family: "Isidora Sans W00 Regular";
   color: #FFFFFF;
   font-size: 16px;
   letter-spacing: 1px;
 }
-/* line 540, sass/modules/_modules.scss */
+/* line 542, sass/modules/_modules.scss */
 .card img {
   transition: transform 0.2s ease-in-out;
   max-height: 140px;
@@ -1961,74 +1961,74 @@ main#content .panel .mesh-container {
   margin-bottom: 2rem;
 }
 
-/* line 549, sass/modules/_modules.scss */
+/* line 551, sass/modules/_modules.scss */
 .title-bar {
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 15px;
 }
-/* line 553, sass/modules/_modules.scss */
+/* line 555, sass/modules/_modules.scss */
 .title-bar p {
   text-transform: uppercase;
   font-family: "Isidora Sans W00 Black";
   font-size: 36px;
   letter-spacing: 1.12px;
 }
-@media screen and (max-width: 480px) {
-  /* line 553, sass/modules/_modules.scss */
+@media screen and (max-width: 1060px) {
+  /* line 555, sass/modules/_modules.scss */
   .title-bar p {
     font-size: 22px;
   }
 }
 
-/* line 566, sass/modules/_modules.scss */
+/* line 568, sass/modules/_modules.scss */
 .img-panel {
   position: relative;
 }
 @media screen and (max-width: 750px) {
-  /* line 569, sass/modules/_modules.scss */
+  /* line 571, sass/modules/_modules.scss */
   .img-panel img {
     display: none;
   }
 }
-/* line 573, sass/modules/_modules.scss */
+/* line 575, sass/modules/_modules.scss */
 .img-panel .feature-img {
   width: 100%;
 }
 
-/* line 579, sass/modules/_modules.scss */
+/* line 581, sass/modules/_modules.scss */
 .full {
   height: 100vh;
 }
 
-/* line 583, sass/modules/_modules.scss */
+/* line 585, sass/modules/_modules.scss */
 .narrow {
   height: 400px;
 }
 
-/* line 588, sass/modules/_modules.scss */
+/* line 590, sass/modules/_modules.scss */
 .panel.locations {
   background-color: #ECEBE4;
 }
 @media screen and (min-width: 1200px) {
-  /* line 590, sass/modules/_modules.scss */
+  /* line 592, sass/modules/_modules.scss */
   .panel.locations .mesh-container {
     max-width: 920px;
   }
 }
 
-/* line 596, sass/modules/_modules.scss */
+/* line 598, sass/modules/_modules.scss */
 .location-card {
   margin-bottom: 50px;
 }
-/* line 599, sass/modules/_modules.scss */
+/* line 601, sass/modules/_modules.scss */
 .location-card.purple h2 {
   color: #BE748a;
 }
-/* line 601, sass/modules/_modules.scss */
+/* line 603, sass/modules/_modules.scss */
 .location-card.purple h2 a {
   color: inherit;
 }
-/* line 606, sass/modules/_modules.scss */
+/* line 608, sass/modules/_modules.scss */
 .location-card h2 {
   font-family: "Isidora Sans W00 Black";
   font-size: 16px;
@@ -2037,18 +2037,18 @@ main#content .panel .mesh-container {
   margin-bottom: 6px;
   margin-top: 0;
 }
-/* line 613, sass/modules/_modules.scss */
+/* line 615, sass/modules/_modules.scss */
 .location-card h2 a {
   color: inherit;
 }
-/* line 617, sass/modules/_modules.scss */
+/* line 619, sass/modules/_modules.scss */
 .location-card p {
   font-family: "Isidora Sans W00 Regular";
   font-size: 16px;
   letter-spacing: 1px;
   margin-bottom: 6px;
 }
-/* line 623, sass/modules/_modules.scss */
+/* line 625, sass/modules/_modules.scss */
 .location-card a {
   font-family: "lust", serif;
   font-weight: 400;
@@ -2057,13 +2057,13 @@ main#content .panel .mesh-container {
   color: #4C4B6B;
   transition: opacity 0.2s ease-in-out;
 }
-/* line 630, sass/modules/_modules.scss */
+/* line 632, sass/modules/_modules.scss */
 .location-card a:hover, .location-card a:active, .location-card a:focus {
   text-decoration: none;
   opacity: 0.5;
 }
 
-/* line 639, sass/modules/_modules.scss */
+/* line 641, sass/modules/_modules.scss */
 .map-key {
   background-color: #ECEBE4;
   padding: 14px;
@@ -2072,7 +2072,7 @@ main#content .panel .mesh-container {
   left: 76px;
 }
 @media screen and (max-width: 750px) {
-  /* line 639, sass/modules/_modules.scss */
+  /* line 641, sass/modules/_modules.scss */
   .map-key {
     position: relative;
     bottom: auto;
@@ -2082,31 +2082,31 @@ main#content .panel .mesh-container {
   }
 }
 @media screen and (max-width: 550px) {
-  /* line 639, sass/modules/_modules.scss */
+  /* line 641, sass/modules/_modules.scss */
   .map-key {
     padding: 40px 20px;
   }
 }
-/* line 655, sass/modules/_modules.scss */
+/* line 657, sass/modules/_modules.scss */
 .map-key .key-row {
   margin-bottom: 10px;
   vertical-align: top;
 }
-/* line 658, sass/modules/_modules.scss */
+/* line 660, sass/modules/_modules.scss */
 .map-key .key-row:last-of-type {
   margin-bottom: 0;
 }
-/* line 662, sass/modules/_modules.scss */
+/* line 664, sass/modules/_modules.scss */
 .map-key .key-marker {
   display: inline-block;
 }
 @media screen and (max-width: 750px) {
-  /* line 662, sass/modules/_modules.scss */
+  /* line 664, sass/modules/_modules.scss */
   .map-key .key-marker {
     display: none;
   }
 }
-/* line 668, sass/modules/_modules.scss */
+/* line 670, sass/modules/_modules.scss */
 .map-key .key-text {
   display: inline-block;
   font-family: "Isidora Sans W00 Regular";
@@ -2116,29 +2116,29 @@ main#content .panel .mesh-container {
   max-width: 240px;
 }
 @media screen and (max-width: 750px) {
-  /* line 668, sass/modules/_modules.scss */
+  /* line 670, sass/modules/_modules.scss */
   .map-key .key-text {
     max-width: none;
     font-size: 16px;
   }
 }
-/* line 679, sass/modules/_modules.scss */
+/* line 681, sass/modules/_modules.scss */
 .map-key .key-text .blue {
   color: #868F9E;
   font-family: "Isidora Sans W00 Black";
 }
-/* line 683, sass/modules/_modules.scss */
+/* line 685, sass/modules/_modules.scss */
 .map-key .key-text .purple {
   color: #BE748a;
   font-family: "Isidora Sans W00 Black";
 }
-/* line 687, sass/modules/_modules.scss */
+/* line 689, sass/modules/_modules.scss */
 .map-key .key-text img {
   display: inline;
   height: 16px;
   width: auto;
 }
-/* line 693, sass/modules/_modules.scss */
+/* line 695, sass/modules/_modules.scss */
 .map-key img.key-marker {
   width: 26px;
   height: auto;
@@ -2146,7 +2146,7 @@ main#content .panel .mesh-container {
   vertical-align: top;
 }
 
-/* line 701, sass/modules/_modules.scss */
+/* line 703, sass/modules/_modules.scss */
 div.wpcf7-response-output {
   border: 3px solid #BE9971 !important;
   margin: 4em 0 0.5em 0;
@@ -2158,7 +2158,271 @@ div.wpcf7-response-output {
   letter-spacing: 1px;
 }
 
-/* line 712, sass/modules/_modules.scss */
+/* line 715, sass/modules/_modules.scss */
+.popup-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 1000;
+  height: 100vh;
+  border-bottom: 2px solid #000000;
+}
+/* line 725, sass/modules/_modules.scss */
+.popup-container .close-btn {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+/* line 733, sass/modules/_modules.scss */
+.popup-container .close-btn:hover, .popup-container .close-btn:active, .popup-container .close-btn:focus {
+  opacity: .6;
+}
+/* line 739, sass/modules/_modules.scss */
+.popup-container .close-btn .cl {
+  height: 2px;
+}
+/* line 742, sass/modules/_modules.scss */
+.popup-container .close-btn .cl.up {
+  transform: rotate(45deg);
+}
+/* line 745, sass/modules/_modules.scss */
+.popup-container .close-btn .cl.down {
+  transform: rotate(-45deg);
+}
+/* line 751, sass/modules/_modules.scss */
+.popup-container .the_popup {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 50px;
+}
+@media (max-width: 1060px) {
+  /* line 751, sass/modules/_modules.scss */
+  .popup-container .the_popup {
+    width: 90%;
+    margin-top: 25px;
+    padding: 0 0 50px 0;
+  }
+}
+/* line 764, sass/modules/_modules.scss */
+.popup-container .the_popup .pop-header {
+  text-align: center;
+}
+/* line 766, sass/modules/_modules.scss */
+.popup-container .the_popup .pop-header img {
+  width: 75px;
+}
+/* line 771, sass/modules/_modules.scss */
+.popup-container .the_popup h3 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-family: "Isidora Sans W00 Black";
+}
+@media (max-width: 1060px) {
+  /* line 771, sass/modules/_modules.scss */
+  .popup-container .the_popup h3 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 750px) {
+  /* line 781, sass/modules/_modules.scss */
+  .popup-container .the_popup .data {
+    max-height: 500px;
+    overflow: scroll;
+  }
+}
+/* line 788, sass/modules/_modules.scss */
+.popup-container .the_popup .data .line {
+  padding: 5px 10px;
+  border-bottom: 2px solid #868F9E;
+}
+/* line 791, sass/modules/_modules.scss */
+.popup-container .the_popup .data .line:last-of-type {
+  border-bottom: none;
+}
+/* line 796, sass/modules/_modules.scss */
+.popup-container .the_popup .data .rt,
+.popup-container .the_popup .data .lt {
+  display: inline-block;
+  vertical-align: middle;
+}
+@media (max-width: 750px) {
+  /* line 796, sass/modules/_modules.scss */
+  .popup-container .the_popup .data .rt,
+  .popup-container .the_popup .data .lt {
+    width: 98%;
+  }
+}
+/* line 806, sass/modules/_modules.scss */
+.popup-container .the_popup .data .lt {
+  width: 40%;
+}
+@media (max-width: 750px) {
+  /* line 806, sass/modules/_modules.scss */
+  .popup-container .the_popup .data .lt {
+    width: 98%;
+  }
+}
+/* line 811, sass/modules/_modules.scss */
+.popup-container .the_popup .data .lt h2 {
+  color: #4C4B6B;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Isidora Sans W00 Black";
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 750px) {
+  /* line 811, sass/modules/_modules.scss */
+  .popup-container .the_popup .data .lt h2 {
+    padding-bottom: 10px;
+  }
+}
+/* line 831, sass/modules/_modules.scss */
+.popup-container .the_popup .data .rt {
+  width: 56%;
+}
+@media (max-width: 750px) {
+  /* line 831, sass/modules/_modules.scss */
+  .popup-container .the_popup .data .rt {
+    width: 98%;
+  }
+}
+/* line 836, sass/modules/_modules.scss */
+.popup-container .the_popup .data .rt p {
+  font-family: "Isidora Sans W00 Regular";
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 750px) {
+  /* line 836, sass/modules/_modules.scss */
+  .popup-container .the_popup .data .rt p {
+    padding-bottom: 5px;
+  }
+}
+
+/* line 852, sass/modules/_modules.scss */
+.the_dropdown {
+  margin-top: 10px;
+  text-align: left;
+  border-bottom: 2px solid #000000;
+}
+/* line 861, sass/modules/_modules.scss */
+.the_dropdown .pop-header {
+  text-align: center;
+}
+/* line 863, sass/modules/_modules.scss */
+.the_dropdown .pop-header img {
+  width: 100px;
+}
+/* line 868, sass/modules/_modules.scss */
+.the_dropdown h3 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-family: "Isidora Sans W00 Black";
+}
+/* line 877, sass/modules/_modules.scss */
+.the_dropdown .data .line {
+  padding: 5px 10px;
+  border-bottom: 2px solid #868F9E;
+}
+/* line 880, sass/modules/_modules.scss */
+.the_dropdown .data .line:last-of-type {
+  border-bottom: none;
+}
+/* line 885, sass/modules/_modules.scss */
+.the_dropdown .data .rt,
+.the_dropdown .data .lt {
+  display: inline-block;
+  vertical-align: middle;
+}
+@media (max-width: 750px) {
+  /* line 885, sass/modules/_modules.scss */
+  .the_dropdown .data .rt,
+  .the_dropdown .data .lt {
+    width: 98%;
+  }
+}
+/* line 895, sass/modules/_modules.scss */
+.the_dropdown .data .lt {
+  width: 40%;
+}
+@media (max-width: 750px) {
+  /* line 895, sass/modules/_modules.scss */
+  .the_dropdown .data .lt {
+    width: 98%;
+  }
+}
+/* line 900, sass/modules/_modules.scss */
+.the_dropdown .data .lt h2 {
+  color: #4C4B6B;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Isidora Sans W00 Black";
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 10px 0;
+}
+/* line 918, sass/modules/_modules.scss */
+.the_dropdown .data .rt {
+  width: 56%;
+}
+@media (max-width: 750px) {
+  /* line 918, sass/modules/_modules.scss */
+  .the_dropdown .data .rt {
+    width: 98%;
+  }
+}
+/* line 923, sass/modules/_modules.scss */
+.the_dropdown .data .rt p {
+  font-family: "Isidora Sans W00 Regular";
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0;
+  padding-bottom: 10px;
+  color: #000000;
+}
+
+/* line 936, sass/modules/_modules.scss */
+a.dropdown-trigger {
+  color: #4C4B6B;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Isidora Sans W00 Black";
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 10px 0;
+}
+/* line 949, sass/modules/_modules.scss */
+a.dropdown-trigger:hover, a.dropdown-trigger:focus, a.dropdown-trigger:active {
+  opacity: .7;
+}
+
+@media (min-width: 750px) {
+  /* line 956, sass/modules/_modules.scss */
+  .mobile-show {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  /* line 962, sass/modules/_modules.scss */
+  .mobile-hide {
+    display: none;
+  }
+}
+
+/* line 968, sass/modules/_modules.scss */
 .clearfix {
   clear: both;
 }

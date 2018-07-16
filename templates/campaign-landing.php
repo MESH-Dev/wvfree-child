@@ -178,6 +178,8 @@ get_header('cpl'); ?>
 								$card_img_url = $card_img['sizes']['medium_large'];
 								$card_link = get_sub_field('card_link');
 								$card_title = get_sub_field('card_title');
+								$ct_lower = strtolower($card_title);
+								$ct_strip = str_replace(' ', '_', $ct_lower);
 								$card_title_color = get_sub_field('card_title_color');
 								$card_description = get_sub_field('card_blurb');
 								$external_link=get_sub_field('external');
@@ -186,20 +188,50 @@ get_header('cpl'); ?>
 								if($external_link == true){
 									$ex_target='target="_blank"';
 								}
+
+								$popup= get_sub_field('more_info_popup');
 							?>
+							<div class="card columns-4">
 							 <?php if ($card_link != ''){ ?>
 							 	<a href="<?php echo $card_link; ?>" <?php echo $ex_target; ?>>
 					 		<?php } ?>
-						 			<div class="card columns-4">
+					 		<?php if ($popup != ''){ ?>
+							 	<a class="popup" id="<?php echo $ct_strip ?>">
+					 		<?php } ?>
+						 			
 										<img src="<?php echo $card_img_url; ?>" alt="">
 										<div class="text">
 											<h3 class="pf" <?php if($card_title_color !=""){ echo 'style="color:'.$card_title_color.';"'; }?>><?php echo $card_title; ?></h3>
 											<p class="sf"><?php echo $card_description; ?></p>
 										</div>
+										<?php if ($popup != ''){ ?>
+										<a class="mobile-show dropdown-trigger">More <i class="fa fa-fw fa-chevron-down"></i></a>
+										<?php } ?>
+
+								<?php if ($popup != ''){ ?>
+							 	</a>
+					 			<?php } ?>
 								<?php if ($card_link != ''){ ?>
 							 	</a>
-					 		<?php } ?>
-
+					 			<?php } ?>
+					 				<?php if (have_rows('more_info_popup')):?>
+					 				<div class="the_dropdown" data-name="<?php echo $ct_strip; ?>" <?php if($panel_bg_color_cards != ''){ echo 'style="background-color:'. $panel_bg_color_cards .'; border-top:5px solid '.$title_row_bg.'; display:none;"';}?>>
+					 					<!-- <span class="close"><i class="fa fa-fw fa-times"></i></span> -->
+					 					<!-- <img src="<?php echo $card_img_url; ?>" alt=""> -->
+					 					<!-- <h3 class="pf" <?php if($card_title_color !=""){ echo 'style="color:'.$card_title_color.';"'; }?>><?php echo $card_title; ?></h3> -->
+					 					<div class="data">
+					 				<?php while(have_rows('more_info_popup')):the_row(); 
+					 						$d_title = get_sub_field('data_title');
+					 						$d_description = ucfirst(strtolower(get_sub_field('data_descripton')));
+					 				?>
+					 					<div class="line">
+					 						<div class="lt"><h2><?php echo $d_title; ?></h2></div>
+					 						<div class="rt"><p><?php echo $d_description; ?></p></div>
+				 						</div>
+			 						<?php endwhile; ?>
+			 							</div>
+		 							</div>
+		 						<?php endif;?>
 								</div>
 								<?if ($card_cnt % 3 == 0){
 								echo '</div><div class="mesh-row">';
@@ -437,6 +469,70 @@ get_header('cpl'); ?>
 				<span class="sr-only"><?php echo $image_o_alt; ?>
 			</div>
 	<?php  } endwhile; endif; ?>
-</main><!-- End of Content -->
+	</main><!-- End of Content -->
+	<?php
+				if (have_rows('panels')):
+						while (have_rows('panels')):the_row();							
+							$card_num = count($cards);
+							$card_cnt=0;
+							$panel_bg_color_cards = get_sub_field('panel_background_color');
+							$p_cnt = 0;
+							if(have_rows('cards')): 
+							$p_cnt++;?>
+							<div class="popup-container <?php echo $p_cnt; ?>" <?php if($panel_bg_color_cards != ''){ echo 'style="background-color:'. $panel_bg_color_cards .'; border-top:5px solid '.$title_row_bg.'; display:none;"';}?>>
+							<?php while(have_rows('cards')): the_row();
+								$card_cnt++;
+							?>
+							<?php
+								$card_img = get_sub_field('card_image');
+								$card_img_url = $card_img['sizes']['medium_large'];
+								$card_link = get_sub_field('card_link');
+								$card_title = get_sub_field('card_title');
+								$ct_lower = strtolower($card_title);
+								$ct_strip = str_replace(' ', '_', $ct_lower);
+								$card_title_color = get_sub_field('card_title_color');
+
+								$popup= get_sub_field('more_info_popup');
+							?>
+							
+					 				<?php if (have_rows('more_info_popup')):?>
+					 				<div class="the_popup" data-name="<?php echo $ct_strip; ?>" style="display:none;">
+					 					<div class="close-btn">
+					 						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+												<defs>
+													<style>.cls-1{fill:<?php echo $title_row_bg; ?>;}</style>
+												</defs><title>LYBC_Popup_Close</title>
+												<path class="cls-1" d="M138.66,150,96.35,107.69,55.77,148.28l-3.85-3.85L92.5,103.85,50,61.34l3.46-3.46L96,100.38,136.55,59.8l3.84,3.85L99.81,104.23l42.31,42.31Z"/>
+											</svg>
+					 						<!-- <div class="cl up" style="background-color:<?php echo $title_row_bg; ?>"></div>
+					 						<div class="cl down" style="background-color:<?php echo $title_row_bg; ?>"></div> -->
+					 					</div>
+					 					
+					 					<div class="pop-header">
+					 						<img src="<?php echo $card_img_url; ?>" alt="">
+					 						<h3 class="pf" <?php if($card_title_color !=""){ echo 'style="color:'.$card_title_color.';"'; }?>><?php echo $card_title; ?></h3>
+					 					</div>
+					 					<div class="data">
+					 				<?php while(have_rows('more_info_popup')):the_row(); 
+					 						$d_title = get_sub_field('data_title');
+					 						$d_description = ucfirst(strtolower(get_sub_field('data_descripton')));
+					 				?>
+					 					<div class="line">
+					 						<div class="lt"><h2><?php echo $d_title; ?></h2></div>
+					 						<div class="rt"><p><?php echo $d_description; ?></p></div>
+				 						</div>
+			 						<?php endwhile; //End More Info loop?>
+			 							</div>
+		 							</div>
+		 						<?php endif; //end More info loop?>
+		 					<?php endwhile; //End Cards loop ?>
+		 				</div>
+		 			<?php endif; //End Cards loop
+		 			endwhile; ?>
+		 		</div>
+		 		<?php endif; //End panels?>
+	
+
+
 
 <?php get_footer('cpl'); ?>

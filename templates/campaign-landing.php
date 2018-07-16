@@ -205,7 +205,9 @@ get_header('cpl'); ?>
 											<p class="sf"><?php echo $card_description; ?></p>
 										</div>
 										<?php if ($popup != ''){ ?>
-										<a class="mobile-show dropdown-trigger">More <i class="fa fa-fw fa-chevron-down"></i></a>
+										<!-- <div class="mobile-show"> -->
+										<a class="dropdown-trigger mobile-show"><span>More <i class="fa fa-fw fa-chevron-down"></i></span></a>
+										<!-- </div> -->
 										<?php } ?>
 
 								<?php if ($popup != ''){ ?>

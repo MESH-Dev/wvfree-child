@@ -2400,30 +2400,33 @@ a.dropdown-trigger {
   font-family: "Isidora Sans W00 Black";
   font-size: 16px;
   letter-spacing: 1px;
-  display: inline-block;
   margin: 0;
-  padding: 20px 0;
 }
 /* line 950, sass/modules/_modules.scss */
+a.dropdown-trigger span {
+  display: inline-block;
+  padding: 20px 0;
+}
+/* line 954, sass/modules/_modules.scss */
 a.dropdown-trigger:hover, a.dropdown-trigger:focus, a.dropdown-trigger:active {
   opacity: .7;
 }
 
 @media (min-width: 750px) {
-  /* line 957, sass/modules/_modules.scss */
+  /* line 961, sass/modules/_modules.scss */
   .mobile-show {
     display: none;
   }
 }
 
 @media (max-width: 750px) {
-  /* line 963, sass/modules/_modules.scss */
+  /* line 967, sass/modules/_modules.scss */
   .mobile-hide {
     display: none;
   }
 }
 
-/* line 969, sass/modules/_modules.scss */
+/* line 973, sass/modules/_modules.scss */
 .clearfix {
   clear: both;
 }

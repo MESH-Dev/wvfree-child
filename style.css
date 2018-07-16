@@ -2401,7 +2401,7 @@ a.dropdown-trigger {
   font-size: 16px;
   letter-spacing: 1px;
   margin: 0;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 /* line 949, sass/modules/_modules.scss */
 a.dropdown-trigger:hover, a.dropdown-trigger:focus, a.dropdown-trigger:active {
